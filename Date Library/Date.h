@@ -54,6 +54,23 @@ public:
 	//Operation (6):
 	static int NumberOfSecondsInAYear(short year);
 	int NumberOfSecondsInAYear();
+
+	//Operation (7):
+	static short NumberOfDaysInAMonth(short year, short month);
+	short NumberOfDaysInAMonth();
+
+	//Operation (8):
+	static int NumberOfHoursInAMonth(short year, short month);
+	int NumberOfHoursInAMonth();
+
+	//Operation (9):
+	static int NumberOfMinutesInAMonth(short year, short month);
+	int NumberOfMinutesInAMonth();
+
+	//Operation (10):
+	static int NumberOfSecondsInAMonth(short year, short month);
+	int NumberOfSecondsInAMonth();
+
 	
 
 	//Operation ():

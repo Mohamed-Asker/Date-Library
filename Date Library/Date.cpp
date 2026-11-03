@@ -111,6 +111,51 @@ int clsDate::NumberOfSecondsInAYear()
 	return NumberOfSecondsInAYear(Year);
 }
 
+//Operation (7):
+short clsDate::NumberOfDaysInAMonth(short year, short month)
+{
+	return (month == 2) ? (isLeapYear(year) ? 29 : 28) : (month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31;
+}
+short clsDate::NumberOfDaysInAMonth()
+{
+	return NumberOfDaysInAMonth(Year, Month);
+}
+
+//Operation (8):
+int clsDate::NumberOfHoursInAMonth(short year, short month)
+{
+	return NumberOfDaysInAMonth(year, month) * 24;
+}
+int clsDate::NumberOfHoursInAMonth()
+{
+	return NumberOfHoursInAMonth(Year, Month);
+}
+
+//Operation (9):
+int clsDate::NumberOfMinutesInAMonth(short year, short month)
+{
+	return NumberOfHoursInAMonth(year, month) * 60;
+}
+int clsDate::NumberOfMinutesInAMonth()
+{
+	return NumberOfMinutesInAMonth(Year, Month);
+}
+
+//Operation (10):
+int clsDate::NumberOfSecondsInAMonth(short year, short month)
+{
+	return NumberOfMinutesInAMonth(year, month) * 60;
+}
+int clsDate::NumberOfSecondsInAMonth()
+{
+	return NumberOfSecondsInAMonth(Year, Month);
+}
+
+
+
+
+
+
 //Operation ():
 void clsDate::SystemDate()
 {
