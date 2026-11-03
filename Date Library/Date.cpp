@@ -151,7 +151,18 @@ int clsDate::NumberOfSecondsInAMonth()
 	return NumberOfSecondsInAMonth(Year, Month);
 }
 
-
+//Operation (11):
+short clsDate::DayOfWeekInOrder(short day, short month, short year)
+{
+	short A = (14 - month) / 12;
+	short Y = year - A;
+	short M = month + (12 * A) - 2;
+	return (day + Y + (Y / 4) - (Y / 100) + (Y / 400) + ((31 * M) / 12)) % 7;
+}
+short clsDate::DayOfWeekInOrder()
+{
+	return DayOfWeekInOrder(Day, Month, Year);
+}
 
 
 

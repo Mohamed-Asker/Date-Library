@@ -5,14 +5,12 @@
 
 int main()
 {
-	clsDate Date("20/4/2000");
+	clsDate Date("3/11/2026");
 	Date.PrintDate();
 
 
-	std::cout << Date.NumberOfDaysInAMonth() << "\n";
-	std::cout << Date.NumberOfHoursInAMonth() << "\n";
-	std::cout << clsDate::NumberOfMinutesInAMonth(2, 2000) << "\n";
-	std::cout << clsDate::NumberOfSecondsInAMonth(2,2000) << "\n";
+	std::cout << Date.DayOfWeekInOrder() << "\n";
+	std::cout << clsDate::DayOfWeekInOrder(2, 11, 2026) << "\n";
 
 
 

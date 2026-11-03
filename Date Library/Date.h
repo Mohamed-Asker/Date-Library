@@ -71,6 +71,10 @@ public:
 	static int NumberOfSecondsInAMonth(short year, short month);
 	int NumberOfSecondsInAMonth();
 
+	//Operation (11):
+	static short DayOfWeekInOrder(short day, short month, short year);
+	short DayOfWeekInOrder();
+
 	
 
 	//Operation ():
