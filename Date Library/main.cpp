@@ -5,7 +5,9 @@
 
 int main()
 {
-	clsDate Date;
+	clsDate Date("20/4/300");
+	Date.PrintDate();
+
 
 
 

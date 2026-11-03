@@ -24,4 +24,18 @@ public:
 	__declspec(property(get = getDay, put = setDay)) short Day;
 	__declspec(property(get = getMonth, put = setMonth))short Month;
 	__declspec(property(get = getYear, put = setYear))short Year;
+
+	//Constructors
+	clsDate();
+	clsDate(std::string sDate);
+	clsDate(short Day, short Month, short Year);
+
+
+	//Operations:
+    //Operation (1):
+	void PrintDate();
+
+	//Operation ():
+	void SystemDate();
+
 };
