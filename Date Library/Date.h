@@ -39,6 +39,23 @@ public:
 	static bool isLeapYear(short year);
 	bool isLeapYear();
 
+	//Operation (3):
+	static short NumberOfDaysInAYear(short year);
+	short NumberOfDaysInAYear();
+
+	//Operation (4):
+	static int NumberOfHoursInAYear(short year);
+	int NumberOfHoursInAYear();
+
+	//Operation (5):
+	static int NumberOfMinutesInAYear(short year);
+	int NumberOfMinutesInAYear();
+
+	//Operation (6):
+	static int NumberOfSecondsInAYear(short year);
+	int NumberOfSecondsInAYear();
+	
+
 	//Operation ():
 	void SystemDate();
 

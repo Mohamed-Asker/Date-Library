@@ -9,8 +9,10 @@ int main()
 	Date.PrintDate();
 
 
-	std::cout << Date.isLeapYear() << "\n";
-	std::cout << clsDate::isLeapYear(2001) << "\n";
+	std::cout << Date.NumberOfDaysInAYear() << "\n";
+	std::cout << Date.NumberOfHoursInAYear() << "\n";
+	std::cout << clsDate::NumberOfMinutesInAYear(2000) << "\n";
+	std::cout << clsDate::NumberOfSecondsInAYear(2000) << "\n";
 
 
 

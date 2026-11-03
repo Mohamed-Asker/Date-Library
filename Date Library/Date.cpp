@@ -71,6 +71,45 @@ bool clsDate::isLeapYear()
 	return isLeapYear(Year);
 }
 
+//Operation (3):
+short clsDate::NumberOfDaysInAYear(short year)
+{
+	return isLeapYear(year) ? 366 : 365;
+}
+short clsDate::NumberOfDaysInAYear()
+{
+	return NumberOfDaysInAYear(Year);
+}
+
+//Operation (4):
+int clsDate::NumberOfHoursInAYear(short year)
+{
+	return NumberOfDaysInAYear(year) * 24;
+}
+int clsDate::NumberOfHoursInAYear()
+{
+	return NumberOfHoursInAYear(Year);
+}
+
+//Operation (5):
+int clsDate::NumberOfMinutesInAYear(short year)
+{
+	return NumberOfHoursInAYear(year) * 60;
+}
+int clsDate::NumberOfMinutesInAYear()
+{
+	return NumberOfMinutesInAYear(Year);
+}
+
+//Operation (6):
+int clsDate::NumberOfSecondsInAYear(short year)
+{
+	return NumberOfMinutesInAYear(year) * 60;
+}
+int clsDate::NumberOfSecondsInAYear()
+{
+	return NumberOfSecondsInAYear(Year);
+}
 
 //Operation ():
 void clsDate::SystemDate()
@@ -82,3 +121,6 @@ void clsDate::SystemDate()
 	Month = Now->tm_mon + 1;
 	Day = Now->tm_mday;
 }
+
+
+
