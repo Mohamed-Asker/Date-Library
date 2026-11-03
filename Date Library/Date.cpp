@@ -61,6 +61,17 @@ void clsDate::PrintDate()
 	std::cout << Day << "/" << Month << "/" << Year << "\n";
 }
 
+//Operation (2):
+bool clsDate::isLeapYear(short year)
+{
+	return (((year % 4 == 0) && (year % 100 != 0)) || year % 400 == 0);
+}
+bool clsDate::isLeapYear()
+{
+	return isLeapYear(Year);
+}
+
+
 //Operation ():
 void clsDate::SystemDate()
 {

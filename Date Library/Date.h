@@ -35,6 +35,10 @@ public:
     //Operation (1):
 	void PrintDate();
 
+	//Operation (2):
+	static bool isLeapYear(short year);
+	bool isLeapYear();
+
 	//Operation ():
 	void SystemDate();
 
