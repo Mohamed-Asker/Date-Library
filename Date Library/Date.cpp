@@ -164,6 +164,21 @@ short clsDate::DayOfWeekInOrder()
 	return DayOfWeekInOrder(Day, Month, Year);
 }
 
+//Operation (12):
+std::string clsDate::DayName(short day)
+{
+	std::string Days[] = { "Sunday","Monday","TueDay","Wednesday","Thrday","Friday","Saturday" };
+	return Days[day];
+}
+std::string clsDate::DayName(short day, short month, short year)
+{
+	return DayName(DayOfWeekInOrder(day, month, year));
+}
+std::string clsDate::DayName()
+{
+	return DayName(DayOfWeekInOrder(Day, Month, Year));
+}
+
 
 
 

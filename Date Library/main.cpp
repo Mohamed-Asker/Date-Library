@@ -9,8 +9,9 @@ int main()
 	Date.PrintDate();
 
 
-	std::cout << Date.DayOfWeekInOrder() << "\n";
-	std::cout << clsDate::DayOfWeekInOrder(2, 11, 2026) << "\n";
+	std::cout << clsDate::DayName(2, 11, 2026) << "\n";
+	std::cout << Date.DayName() << "\n";
+	std::cout << clsDate::DayName(0) << "\n";
 
 
 

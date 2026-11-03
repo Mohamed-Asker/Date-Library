@@ -75,6 +75,11 @@ public:
 	static short DayOfWeekInOrder(short day, short month, short year);
 	short DayOfWeekInOrder();
 
+	//Operation (12):
+	static std::string DayName(short Day);
+	static std::string DayName(short day, short month, short year);
+	std::string DayName();
+
 	
 
 	//Operation ():
