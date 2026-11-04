@@ -39,7 +39,7 @@ short clsDate::getYear() const
 //Constructors
 clsDate::clsDate()
 {
-	SystemDate();
+	*this = SystemDate();
 }
 clsDate::clsDate(std::string sDate)
 {
@@ -75,7 +75,6 @@ void clsDate::IncreaseYear()
 {
 	_Year++;
 }
-
 
 //Operations:
 //Operation (1):
@@ -430,8 +429,6 @@ void clsDate::SwapDates(clsDate& Date2)
 	SwapDates(*this, Date2);
 }
 
-
-
 //Operation (25):
 int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay)
 {
@@ -455,18 +452,38 @@ int clsDate::DiffInDays(clsDate Date2, bool IncludeEndDay)
 	return DiffInDays(*this, Date2, IncludeEndDay);
 }
 
-
-//Operation ():
-void clsDate::SystemDate()
+//Operation (26):
+clsDate clsDate::SystemDate()
 {
+	clsDate Date("0/0/0");
 	std::time_t Time = std::time(0);
 	std::tm* Now = std::localtime(&Time);
 
-	Year = Now->tm_year + 1900;
-	Month = Now->tm_mon + 1;
-	Day = Now->tm_mday;
+	Date.Year = Now->tm_year + 1900;
+	Date.Month = Now->tm_mon + 1;
+	Date.Day = Now->tm_mday;
+	return Date;
 }
 
+//Operation (27):
+int clsDate::YourAgeInDays(clsDate BirthDay)
+{
+	return DiffInDays(BirthDay, SystemDate(), false);
+}
+int clsDate::YourAgeInDays()
+{
+	return YourAgeInDays(*this);
+}
 
-
+//Operation (28):
+clsDate clsDate::IncreaseDateByXDays(clsDate Date, int Days)
+{
+	for (int i = 1; i <= Days; i++)
+		Date.AddOneDayToDate();
+	return Date;
+}
+void clsDate::IncreaseDateByXDays(int Days)
+{
+	*this = IncreaseDateByXDays(*this, Days);
+}
  

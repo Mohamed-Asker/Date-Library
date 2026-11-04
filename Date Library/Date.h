@@ -140,9 +140,15 @@ public:
 	static int DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay =true);
 	int DiffInDays(clsDate Date2, bool IncludeEndDay = true);
 
-	
+	//Operation (26):
+	static clsDate SystemDate();
 
-	//Operation ():
-	void SystemDate();
+	//Operation (27):
+	static int YourAgeInDays(clsDate BirthDay);
+	int YourAgeInDays();
+
+	//Operation (28):
+	static clsDate IncreaseDateByXDays(clsDate Date, int Days);
+	void IncreaseDateByXDays(int Days);
 
 };
