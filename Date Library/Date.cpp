@@ -350,7 +350,15 @@ bool clsDate::isDateBeforeDate2(clsDate Date2)
 	return isDate1BeforeDate2(*this, Date2);
 }
 
-
+//Operation (19):
+bool clsDate::isDate1EqualDate2(clsDate Date1, clsDate Date2)
+{
+	return (Date1.Year == Date2.Year) && (Date1.Month == Date2.Month) && (Date1.Day == Date2.Day);
+}
+bool clsDate::isDateEqualDate2(clsDate Date2)
+{
+	return isDate1EqualDate2(*this, Date2);
+}
 
 
 
