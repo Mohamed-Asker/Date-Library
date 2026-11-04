@@ -194,7 +194,7 @@ std::string clsDate::MonthName()
 //Operation (14):
 void clsDate::PrintHeaderOfMonthCalender(short year , short month)
 {
-	std::cout << "===============[" << MonthName(month) << " " << year << "]==============\n";
+	std::cout << "==============[" << MonthName(month) << " " << year << "]===============\n";
 	for (short i = 0; i < 7; i++)
 		std::cout << std::left << std::setw(6) << DayName(i);
 
@@ -225,6 +225,20 @@ void clsDate::MonthCalender()
 	MonthCalender(Year, Month);
 }
 
+
+//Operation (15):
+void clsDate::YearCalender(short year)
+{
+	for (short month = 1; month <= 12; month++)
+	{
+		MonthCalender(year, month);
+		std::cout << std::endl;
+	}
+}
+void clsDate::YearCalender()
+{
+	YearCalender(Year);
+}
 
 
 

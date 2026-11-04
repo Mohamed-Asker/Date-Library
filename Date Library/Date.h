@@ -92,6 +92,10 @@ public:
 	static void MonthCalender(short year, short month);
 	void MonthCalender();
 
+	//Operation (15):
+	static void YearCalender(short year);
+	void YearCalender();
+
 	
 
 	//Operation ():

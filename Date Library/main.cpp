@@ -7,10 +7,8 @@ int main()
 {
 	clsDate Date("3/11/2026");
 
-	Date.MonthCalender();
-	clsDate::MonthCalender(2023, 5);
-
-
+	clsDate::YearCalender(2026);
+	
 
 
 
