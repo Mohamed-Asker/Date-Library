@@ -19,15 +19,15 @@ protected:
 	void IncreaseYear();
 
 public:
-	//Properties set.
+	//Setters.
 	void setDay(short Day);
 	void setMonth(short Month);
 	void setYear(short Year);
 
-	//Read Only Properties.
-	short getDay();
-	short getMonth();
-	short getYear();
+	//Getters.
+	short getDay() const;
+	short getMonth() const;
+	short getYear() const;
 
 	//Properties.
 	__declspec(property(get = getDay, put = setDay)) short Day;
@@ -113,28 +113,32 @@ public:
 	void AddDaysToDate(int Days);
 
 	//Operation (19):
-	static bool isDate1BeforeDate2(clsDate Date1, clsDate Date2);
-	bool isDateBeforeDate2(clsDate Date2);
-
-	//Operation (19):
-	static bool isDate1EqualDate2(clsDate Date1, clsDate Date2);
-	bool isDateEqualDate2(clsDate Date2);
+	static bool isDate1BeforeDate2(const clsDate& Date1, const clsDate& Date2);
+	bool isDateBeforeDate2(const clsDate& Date2);
 
 	//Operation (20):
+	static bool isDate1EqualDate2(const clsDate& Date1, const clsDate& Date2);
+	bool isDateEqualDate2(const clsDate& Date2);
+
+	//Operation (21):
 	static bool isLastDayInAMonth(clsDate& Date);
 	bool isLastDayInAMonth();
 
-	//Operation (21):
+	//Operation (22):
 	static bool isLastMonthInAYear(short month);
 	bool isLastMonthInAYear();
 
-	//Operation (22):
+	//Operation (23):
 	static clsDate AddOneDayToDate(clsDate Date);
 	void AddOneDayToDate();
 
-	//Operation (23):
+	//Operation (24):
 	static void SwapDates(clsDate& Date1, clsDate& Date2);
 	void SwapDates(clsDate& Date2);
+
+	//Operation (25):
+	static int DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay =true);
+	int DiffInDays(clsDate Date2, bool IncludeEndDay = true);
 
 	
 

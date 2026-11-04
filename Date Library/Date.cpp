@@ -1,4 +1,4 @@
-#pragma warning (disable : 4996);
+#pragma warning (disable : 4996)
 #include <iostream>
 #include <vector>
 #include <string>
@@ -8,7 +8,7 @@
 
 
 
-//Properties set:
+//Setters.
 void clsDate::setDay(short Day)
 {
 	_Day = Day;
@@ -22,16 +22,16 @@ void clsDate::setYear(short Year)
 	_Year = Year;
 }
 
-//Read Only Properties:
-short clsDate::getDay()
+//Getters.
+short clsDate::getDay() const
 {
 	return _Day;
 }
-short clsDate::getMonth()
+short clsDate::getMonth() const 
 {
 	return _Month;
 }
-short clsDate::getYear()
+short clsDate::getYear() const 
 {
 	return _Year;
 }
@@ -336,7 +336,7 @@ void clsDate::AddDaysToDate(int Days)
 }
 
 //Operation (19):
-bool clsDate::isDate1BeforeDate2(clsDate Date1, clsDate Date2)
+bool clsDate::isDate1BeforeDate2(const clsDate& Date1,const clsDate& Date2)
 {
 	if (Date1.Year != Date2.Year)	return Date1.Year < Date2.Year;
 	if (Date1.Month != Date2.Month)	return Date1.Month < Date2.Month;
@@ -345,22 +345,22 @@ bool clsDate::isDate1BeforeDate2(clsDate Date1, clsDate Date2)
 	//Another Soultion:
 	//return (Date1.Year < Date2.Year) ? true : (Date1.Year == Date2.Year) ? (Date1.Month < Date2.Month) ? true : (Date1.Month == Date2.Month) ? (Date1.Day < Date2.Day) : false : false;
 }
-bool clsDate::isDateBeforeDate2(clsDate Date2)
+bool clsDate::isDateBeforeDate2(const clsDate& Date2)
 {
 	return isDate1BeforeDate2(*this, Date2);
 }
 
-//Operation (19):
-bool clsDate::isDate1EqualDate2(clsDate Date1, clsDate Date2)
+//Operation (20):
+bool clsDate::isDate1EqualDate2(const clsDate& Date1, const clsDate& Date2)
 {
 	return (Date1.Year == Date2.Year) && (Date1.Month == Date2.Month) && (Date1.Day == Date2.Day);
 }
-bool clsDate::isDateEqualDate2(clsDate Date2)
+bool clsDate::isDateEqualDate2(const clsDate& Date2)
 {
 	return isDate1EqualDate2(*this, Date2);
 }
 
-//Operation (20):
+//Operation (21):
 bool clsDate::isLastDayInAMonth(clsDate& Date)
 {
 	return Date.Day == Date.NumberOfDaysInAMonth();
@@ -370,7 +370,7 @@ bool clsDate::isLastDayInAMonth()
 	return isLastDayInAMonth(*this);
 }
 
-//Operation (21):
+//Operation (22):
 bool clsDate::isLastMonthInAYear(short month)
 {
 	return month == 12;
@@ -380,7 +380,7 @@ bool clsDate::isLastMonthInAYear()
 	return isLastMonthInAYear(this->Month);
 }
 
-//Operation (22):
+//Operation (23):
 clsDate clsDate::AddOneDayToDate(clsDate Date)
 {
 	if (Date.isLastDayInAMonth())
@@ -408,7 +408,7 @@ void clsDate::AddOneDayToDate()
 	*this = AddOneDayToDate(*this);
 }
 
-//Operation (23):
+//Operation (24):
 void clsDate::SwapDates(clsDate& Date1, clsDate& Date2)
 {
 	clsDate tempDate;
@@ -431,6 +431,29 @@ void clsDate::SwapDates(clsDate& Date2)
 }
 
 
+
+//Operation (25):
+int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay)
+{
+	short SwapFlagValue = 1;
+	int Days = 0;
+	if (!isDate1BeforeDate2(Date1, Date2))
+	{
+		SwapDates(Date1, Date2);
+		SwapFlagValue = -1;
+	}
+
+	while (isDate1BeforeDate2(Date1, Date2))
+	{
+		Date1.AddOneDayToDate();
+		Days++;
+	}
+	return (IncludeEndDay) ? ++Days * SwapFlagValue : Days * SwapFlagValue;
+}
+int clsDate::DiffInDays(clsDate Date2, bool IncludeEndDay)
+{
+	return DiffInDays(*this, Date2, IncludeEndDay);
+}
 
 
 //Operation ():

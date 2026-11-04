@@ -5,14 +5,15 @@
 
 int main()
 {
-	clsDate Date("28/2/2000");
-	clsDate Date2("1/5/2026");
+	clsDate Date("10/1/2000");
+	clsDate Date2("20/1/2000");
 	
 
-	clsDate::SwapDates(Date, Date2);
+	std::cout << Date.DiffInDays(Date2, false) << "\n";
+	std::cout << Date2.DiffInDays(Date) << "\n";
 
-	Date.PrintDate();
-	Date2.PrintDate(); 
+	std::cout << clsDate::DiffInDays(Date, Date2) << "\n";
+	
 
 	system("pause>0");
 	return 0;
