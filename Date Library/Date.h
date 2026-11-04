@@ -37,7 +37,7 @@ public:
 
 	//Operation (2):
 	static bool isLeapYear(short year);
-	bool isLeapYear();
+	bool isLeapYear(); 
 
 	//Operation (3):
 	static short NumberOfDaysInAYear(short year);
@@ -79,6 +79,10 @@ public:
 	static std::string DayName(short Day);
 	static std::string DayName(short day, short month, short year);
 	std::string DayName();
+
+	//Operation (13):
+	static std::string MonthName(short month);
+	std::string MonthName();
 
 	
 

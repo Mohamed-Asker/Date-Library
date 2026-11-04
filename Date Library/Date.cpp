@@ -179,6 +179,20 @@ std::string clsDate::DayName()
 	return DayName(DayOfWeekInOrder(Day, Month, Year));
 }
 
+//Operation (13):
+std::string clsDate::MonthName(short month)
+{
+	std::string Months[] = { "January","February","March","April","May","June","July","August","September","October","November","December" };
+	return Months[month - 1];
+}
+std::string clsDate::MonthName()
+{
+	return MonthName(Month);
+}
+
+
+
+
 
 
 
