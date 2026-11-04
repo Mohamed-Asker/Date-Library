@@ -380,8 +380,8 @@ bool clsDate::isLastMonthInAYear()
 	return isLastMonthInAYear(this->Month);
 }
 
-//Operation (23):
-clsDate clsDate::AddOneDayToDate(clsDate& Date)
+//Operation (22):
+clsDate clsDate::AddOneDayToDate(clsDate Date)
 {
 	if (Date.isLastDayInAMonth())
 	{
@@ -405,7 +405,29 @@ clsDate clsDate::AddOneDayToDate(clsDate& Date)
 }
 void clsDate::AddOneDayToDate()
 {
-	AddOneDayToDate(*this);
+	*this = AddOneDayToDate(*this);
+}
+
+//Operation (23):
+void clsDate::SwapDates(clsDate& Date1, clsDate& Date2)
+{
+	clsDate tempDate;
+
+	tempDate.Day = Date1.Day;
+	tempDate.Month = Date1.Month;
+	tempDate.Year = Date1.Year;
+
+	Date1.Day = Date2.Day;
+	Date1.Month = Date2.Month;
+	Date1.Year = Date2.Year;
+
+	Date2.Day = tempDate.Day;
+	Date2.Month = tempDate.Month;
+	Date2.Year = tempDate.Year;
+}
+void clsDate::SwapDates(clsDate& Date2)
+{
+	SwapDates(*this, Date2);
 }
 
 
@@ -424,3 +446,4 @@ void clsDate::SystemDate()
 
 
 
+ 
