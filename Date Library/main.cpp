@@ -5,9 +5,10 @@
 
 int main()
 {
-	clsDate Date("3/11/2026");
+	clsDate Date("15/1/2026");
 
-	clsDate::YearCalender(2026);
+	std::cout << Date.DaysFromBeginningOfYear() << "\n";
+	std::cout << clsDate::DaysFromBeginningOfYear(1, 3, 2000);
 	
 
 

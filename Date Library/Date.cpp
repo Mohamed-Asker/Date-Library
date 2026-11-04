@@ -225,7 +225,6 @@ void clsDate::MonthCalender()
 	MonthCalender(Year, Month);
 }
 
-
 //Operation (15):
 void clsDate::YearCalender(short year)
 {
@@ -238,6 +237,20 @@ void clsDate::YearCalender(short year)
 void clsDate::YearCalender()
 {
 	YearCalender(Year);
+}
+
+//Operation (16):
+short clsDate::DaysFromBeginningOfYear(short day, short month, short year)
+{
+	short TotalDays = 0;
+	for (short i = 1; i < month; i++)
+		TotalDays += NumberOfDaysInAMonth(year, i);
+	TotalDays += day;
+	return TotalDays;
+}
+short clsDate::DaysFromBeginningOfYear()
+{
+	return DaysFromBeginningOfYear(Day, Month, Year);
 }
 
 

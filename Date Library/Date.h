@@ -96,6 +96,10 @@ public:
 	static void YearCalender(short year);
 	void YearCalender();
 
+	//Operation (16):
+	static short DaysFromBeginningOfYear(short day, short month, short year);
+	short DaysFromBeginningOfYear();
+
 	
 
 	//Operation ():
