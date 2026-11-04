@@ -151,4 +151,7 @@ public:
 	static clsDate IncreaseDateByXDays(clsDate Date, int Days);
 	void IncreaseDateByXDays(int Days);
 
+	//Operation (29):
+	static clsDate IncreaseDateByOneWeek(clsDate Date);
+	void IncreaseDateByOneWeek();
 };

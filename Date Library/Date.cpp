@@ -487,3 +487,16 @@ void clsDate::IncreaseDateByXDays(int Days)
 	*this = IncreaseDateByXDays(*this, Days);
 }
  
+//Operation (29):
+clsDate clsDate::IncreaseDateByOneWeek(clsDate Date)
+{
+	for (short i = 1; i <= 7; i++)
+		Date.AddOneDayToDate();
+	return Date;
+}
+void clsDate::IncreaseDateByOneWeek()
+{
+	*this = IncreaseDateByOneWeek(*this);
+}
+
+
