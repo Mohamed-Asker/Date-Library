@@ -510,3 +510,23 @@ void clsDate::IncreaseDateByXWeeks(int Weeks)
 {
 	*this = IncreaseDateByXWeeks(*this, Weeks);
 }
+
+//Operation (31):
+clsDate clsDate::IncreaseDateByOneMonth(clsDate Date)
+{
+	if (Date.isLastMonthInAYear())
+	{
+		Date.IncreaseYear();
+		Date.Month = 1;
+	}
+	else
+		Date.IncreaseMonth();
+
+	short DaysInNewMonth = Date.NumberOfDaysInAMonth();
+	Date.Day = (Date.Day > DaysInNewMonth) ? DaysInNewMonth : Date.Day;
+	return Date;
+}
+void clsDate::IncreaseDateByOneMonth()
+{
+	*this = IncreaseDateByOneMonth(*this);
+}
