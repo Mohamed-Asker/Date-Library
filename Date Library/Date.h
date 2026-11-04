@@ -13,6 +13,11 @@ protected:
 	//Following To Operation (14).
 	static void PrintHeaderOfMonthCalender(short year, short month);
 
+	//Helpers Functions
+	void IncreaseDay();
+	void IncreaseMonth();
+	void IncreaseYear();
+
 public:
 	//Properties set.
 	void setDay(short Day);
@@ -33,7 +38,7 @@ public:
 	clsDate();
 	clsDate(std::string sDate);
 	clsDate(short Day, short Month, short Year);
-
+	clsDate(short DayOrderInYear, short year);
 
 	//Operations:
     //Operation (1):
@@ -99,6 +104,13 @@ public:
 	//Operation (16):
 	static short DaysFromBeginningOfYear(short day, short month, short year);
 	short DaysFromBeginningOfYear();
+
+	//Operation (17):
+	static clsDate DateFromDayOrderInYear(short DayOrder, short year);
+
+	//Operation (18):
+	static clsDate AddDaysToDate(clsDate Date, int Days);
+	void AddDaysToDate(int Days);
 
 	
 

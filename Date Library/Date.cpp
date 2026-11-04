@@ -54,6 +54,28 @@ clsDate::clsDate(short Day, short Month, short Year)
 	this->Month = Month;
 	this->Year = Year;
 }
+clsDate::clsDate(short DayOrderInYear, short year)
+{
+	clsDate Date = DateFromDayOrderInYear(DayOrderInYear, year);
+	this->Day = Date.Day;
+	this->Month = Date.Month;
+	this->Year = Date.Year;
+}
+
+//Helpers Functions
+void clsDate::IncreaseDay()
+{
+	_Day++;
+}
+void clsDate::IncreaseMonth()
+{
+	_Month++;
+}
+void clsDate::IncreaseYear()
+{
+	_Year++;
+}
+
 
 //Operations:
 //Operation (1):
@@ -253,6 +275,70 @@ short clsDate::DaysFromBeginningOfYear()
 	return DaysFromBeginningOfYear(Day, Month, Year);
 }
 
+//Operation (17):
+clsDate clsDate::DateFromDayOrderInYear(short DayOrder, short year)
+{
+	clsDate Date;
+	short RemainningDay = DayOrder;
+	short MonthDays;
+
+	Date.Year = year;
+	Date.Month = 1;
+
+	while (true)
+	{
+		MonthDays = Date.NumberOfDaysInAMonth();
+		if (MonthDays < RemainningDay)
+		{
+			RemainningDay -= MonthDays;
+			Date.IncreaseMonth();
+		}
+		else
+		{
+			Date.Day = RemainningDay;
+			break;
+		}
+	}
+	return Date;
+}
+
+//Operation (18):
+clsDate clsDate::AddDaysToDate(clsDate Date, int Days)
+{
+	int RemainningDays = Date.DaysFromBeginningOfYear() + Days;
+	short MonthDays;
+	Date.Month = 1;
+
+	while (true)
+	{
+		MonthDays = Date.NumberOfDaysInAMonth();
+		if (MonthDays < RemainningDays)
+		{
+			RemainningDays -= MonthDays;
+			Date.IncreaseMonth();
+			if (Date.Month > 12)
+			{
+				Date.IncreaseYear();
+				Date.Month = 1;
+			}
+		}
+		else
+		{
+			Date.Day = RemainningDays;
+			break;
+		}
+	}
+	return Date;
+}
+void clsDate::AddDaysToDate(int Days)
+{
+	*this = AddDaysToDate(*this, Days);
+}
+
+
+
+
+
 
 
 //Operation ():
@@ -265,3 +351,6 @@ void clsDate::SystemDate()
 	Month = Now->tm_mon + 1;
 	Day = Now->tm_mday;
 }
+
+
+
