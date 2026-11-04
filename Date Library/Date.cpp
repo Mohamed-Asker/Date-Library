@@ -530,3 +530,18 @@ void clsDate::IncreaseDateByOneMonth()
 {
 	*this = IncreaseDateByOneMonth(*this);
 }
+
+//Operation (32):
+clsDate clsDate::IncreaseDateByXMonths(clsDate Date, int Months)
+{
+	short DaysInTheCurrentMonth = Date.NumberOfDaysInAMonth();
+	for (int i = 1; i <= Months; i++)
+		Date.IncreaseDateByOneMonth();
+	short DaysInTheNewMonth = Date.NumberOfDaysInAMonth();
+	Date.Day = (DaysInTheCurrentMonth > DaysInTheNewMonth) ? DaysInTheNewMonth : DaysInTheCurrentMonth;
+	return Date;
+}
+void clsDate::IncreaseDateByXMonths(int Months)
+{
+	*this = IncreaseDateByXMonths(*this, Months);
+}

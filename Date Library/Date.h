@@ -163,6 +163,8 @@ public:
 	static clsDate IncreaseDateByOneMonth(clsDate Date);
 	void IncreaseDateByOneMonth();
 
-
+	//Operation (32):
+	static clsDate IncreaseDateByXMonths(clsDate Date, int Months);
+	void IncreaseDateByXMonths(int Months);
 
 };

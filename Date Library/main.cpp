@@ -5,12 +5,12 @@
 
 int main()
 {
-	clsDate Date("25/1/2000");
+	clsDate Date("31/1/2000");
 	clsDate Date2;
 
-	Date2 = clsDate::IncreaseDateByOneMonth(Date);
+	Date2 = clsDate::IncreaseDateByXMonths(Date, 12);
 	Date2.PrintDate();
-	Date.IncreaseDateByOneMonth();
+	Date.IncreaseDateByXMonths(12);
 	Date.PrintDate();
 
 	system("pause>0");
