@@ -380,6 +380,35 @@ bool clsDate::isLastMonthInAYear()
 	return isLastMonthInAYear(this->Month);
 }
 
+//Operation (23):
+clsDate clsDate::AddOneDayToDate(clsDate& Date)
+{
+	if (Date.isLastDayInAMonth())
+	{
+		if (Date.isLastMonthInAYear())
+		{
+			Date.IncreaseYear();
+			Date.Month = 1;
+			Date.Day = 1;
+		}
+		else
+		{
+			Date.IncreaseMonth();
+			Date.Day = 1;
+		}
+	}
+	else
+	{
+		Date.IncreaseDay();
+	}
+	return Date;
+}
+void clsDate::AddOneDayToDate()
+{
+	AddOneDayToDate(*this);
+}
+
+
 
 
 //Operation ():

@@ -128,6 +128,11 @@ public:
 	static bool isLastMonthInAYear(short month);
 	bool isLastMonthInAYear();
 
+	//Operation (23):
+	static clsDate AddOneDayToDate(clsDate& Date);
+	void AddOneDayToDate();
+	
+
 	//Operation ():
 	void SystemDate();
 
