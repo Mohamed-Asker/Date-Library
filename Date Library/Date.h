@@ -9,6 +9,10 @@ private:
 	short _Month;
 	short _Year;
 
+protected:
+	//Following To Operation (14).
+	static void PrintHeaderOfMonthCalender(short year, short month);
+
 public:
 	//Properties set.
 	void setDay(short Day);
@@ -83,6 +87,10 @@ public:
 	//Operation (13):
 	static std::string MonthName(short month);
 	std::string MonthName();
+
+	//Operation (14):
+	static void MonthCalender(short year, short month);
+	void MonthCalender();
 
 	
 

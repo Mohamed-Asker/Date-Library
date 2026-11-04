@@ -6,10 +6,10 @@
 int main()
 {
 	clsDate Date("3/11/2026");
-	Date.PrintDate();
 
-	std::cout << clsDate::MonthName(2) << "\n";
-	std::cout << Date.MonthName();
+	Date.MonthCalender();
+	clsDate::MonthCalender(2023, 5);
+
 
 
 

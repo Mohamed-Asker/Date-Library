@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iomanip>
 #include "Date.h"
 #include "../../String Library/String Library/clsString.h"
 
@@ -167,7 +168,7 @@ short clsDate::DayOfWeekInOrder()
 //Operation (12):
 std::string clsDate::DayName(short day)
 {
-	std::string Days[] = { "Sunday","Monday","TueDay","Wednesday","Thrday","Friday","Saturday" };
+	std::string Days[] = { "Sun","Mon","Tue","Wed","Thr","Fri","Sat" };
 	return Days[day];
 }
 std::string clsDate::DayName(short day, short month, short year)
@@ -182,7 +183,7 @@ std::string clsDate::DayName()
 //Operation (13):
 std::string clsDate::MonthName(short month)
 {
-	std::string Months[] = { "January","February","March","April","May","June","July","August","September","October","November","December" };
+	std::string Months[] = { "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" };
 	return Months[month - 1];
 }
 std::string clsDate::MonthName()
@@ -190,8 +191,39 @@ std::string clsDate::MonthName()
 	return MonthName(Month);
 }
 
+//Operation (14):
+void clsDate::PrintHeaderOfMonthCalender(short year , short month)
+{
+	std::cout << "===============[" << MonthName(month) << " " << year << "]==============\n";
+	for (short i = 0; i < 7; i++)
+		std::cout << std::left << std::setw(6) << DayName(i);
 
+	std::cout << std::endl;
+}
+void clsDate::MonthCalender(short year, short month)
+{
+	short DaysInAMonth = NumberOfDaysInAMonth(year, month);
+	short DayIndex = DayOfWeekInOrder(1, month, year);
+	PrintHeaderOfMonthCalender(year, month);
 
+	for (short i = 0; i < DayIndex; i++)
+		std::cout << std::left << std::setw(6) << "";
+
+	for (short i = 1; i <= DaysInAMonth; i++)
+	{
+		std::cout << std::left << std::setw(6) << i;
+		if (++DayIndex == 7)
+		{
+			std::cout << "\n";
+			DayIndex = 0;
+		}
+	}
+	std::cout << "\n=======================================\n";
+}
+void clsDate::MonthCalender()
+{
+	MonthCalender(Year, Month);
+}
 
 
 
@@ -206,6 +238,3 @@ void clsDate::SystemDate()
 	Month = Now->tm_mon + 1;
 	Day = Now->tm_mday;
 }
-
-
-
