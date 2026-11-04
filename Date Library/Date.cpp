@@ -360,6 +360,26 @@ bool clsDate::isDateEqualDate2(clsDate Date2)
 	return isDate1EqualDate2(*this, Date2);
 }
 
+//Operation (20):
+bool clsDate::isLastDayInAMonth(clsDate& Date)
+{
+	return Date.Day == Date.NumberOfDaysInAMonth();
+}
+bool clsDate::isLastDayInAMonth()
+{
+	return isLastDayInAMonth(*this);
+}
+
+//Operation (21):
+bool clsDate::isLastMonthInAYear(short month)
+{
+	return month == 12;
+}
+bool clsDate::isLastMonthInAYear()
+{
+	return isLastMonthInAYear(this->Month);
+}
+
 
 
 //Operation ():

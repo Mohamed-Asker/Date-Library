@@ -120,6 +120,14 @@ public:
 	static bool isDate1EqualDate2(clsDate Date1, clsDate Date2);
 	bool isDateEqualDate2(clsDate Date2);
 
+	//Operation (20):
+	static bool isLastDayInAMonth(clsDate& Date);
+	bool isLastDayInAMonth();
+
+	//Operation (21):
+	static bool isLastMonthInAYear(short month);
+	bool isLastMonthInAYear();
+
 	//Operation ():
 	void SystemDate();
 
