@@ -335,7 +335,20 @@ void clsDate::AddDaysToDate(int Days)
 	*this = AddDaysToDate(*this, Days);
 }
 
+//Operation (19):
+bool clsDate::isDate1BeforeDate2(clsDate Date1, clsDate Date2)
+{
+	if (Date1.Year != Date2.Year)	return Date1.Year < Date2.Year;
+	if (Date1.Month != Date2.Month)	return Date1.Month < Date2.Month;
+	return Date1.Day < Date2.Day;
 
+	//Another Soultion:
+	//return (Date1.Year < Date2.Year) ? true : (Date1.Year == Date2.Year) ? (Date1.Month < Date2.Month) ? true : (Date1.Month == Date2.Month) ? (Date1.Day < Date2.Day) : false : false;
+}
+bool clsDate::isDateBeforeDate2(clsDate Date2)
+{
+	return isDate1BeforeDate2(*this, Date2);
+}
 
 
 

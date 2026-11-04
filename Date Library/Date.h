@@ -112,7 +112,10 @@ public:
 	static clsDate AddDaysToDate(clsDate Date, int Days);
 	void AddDaysToDate(int Days);
 
-	
+	//Operation (19):
+	static bool isDate1BeforeDate2(clsDate Date1, clsDate Date2);
+	bool isDateBeforeDate2(clsDate Date2);
+
 
 	//Operation ():
 	void SystemDate();
