@@ -8,9 +8,9 @@ int main()
 	clsDate Date("1/10/2026");
 	clsDate Date2;
 
-	Date2 = clsDate::IncreaseDateByOneWeek(Date);
+	Date2 = clsDate::IncreaseDateByXWeeks(Date, 2);
 	Date2.PrintDate();
-	Date.IncreaseDateByOneWeek();
+	Date.IncreaseDateByXWeeks(2);
 	Date.PrintDate();
 
 	system("pause>0");

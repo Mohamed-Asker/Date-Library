@@ -154,4 +154,8 @@ public:
 	//Operation (29):
 	static clsDate IncreaseDateByOneWeek(clsDate Date);
 	void IncreaseDateByOneWeek();
+
+	//Operation (30):
+	static clsDate IncreaseDateByXWeeks(clsDate Date, int Weeks);
+	void IncreaseDateByXWeeks(int Weeks);
 };

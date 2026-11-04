@@ -499,4 +499,14 @@ void clsDate::IncreaseDateByOneWeek()
 	*this = IncreaseDateByOneWeek(*this);
 }
 
-
+//Operation (30):
+clsDate clsDate::IncreaseDateByXWeeks(clsDate Date, int Weeks)
+{
+	for (int i = 1; i <= Weeks; i++)
+		Date.IncreaseDateByOneWeek();
+	return Date;
+}
+void clsDate::IncreaseDateByXWeeks(int Weeks)
+{
+	*this = IncreaseDateByXWeeks(*this, Weeks);
+}
