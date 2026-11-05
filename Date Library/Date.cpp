@@ -578,3 +578,15 @@ void clsDate::IncreaseDateByXYears(int Years)
 {
 	IncreaseDateByXYears(*this, Years);
 }
+
+//Operation (35):
+clsDate clsDate::IncreaseDateByOneDecade(clsDate Date)
+{
+	Date.IncreaseYear(10);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::IncreaseDateByOneDecade()
+{
+	*this = IncreaseDateByOneDecade(*this);
+}

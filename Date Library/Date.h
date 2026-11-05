@@ -176,4 +176,9 @@ public:
 	static clsDate IncreaseDateByXYears(clsDate Date, int Years);
 	void IncreaseDateByXYears(int Years);
 
+	//Operation (35):
+	static clsDate IncreaseDateByOneDecade(clsDate Date);
+	void IncreaseDateByOneDecade();
+
+
 };
