@@ -254,4 +254,8 @@ public:
 	//Operation (53):
 	static bool isWordDay(clsDate& Date);
 	bool isWordDay();
+
+	//Operation (54):
+	static short CalCulateDaysToEndOfWeek(clsDate& Date);
+	short CalCulateDaysToEndOfWeek();
 };

@@ -858,3 +858,13 @@ bool clsDate::isWordDay()
 {
 	return isWordDay(*this);
 }
+
+//Operation (53):
+short clsDate::CalCulateDaysToEndOfWeek(clsDate& Date)
+{
+	return (6 - Date.DayOfWeekInOrder());
+}
+short clsDate::CalCulateDaysToEndOfWeek()
+{
+	return CalCulateDaysToEndOfWeek(*this);
+}

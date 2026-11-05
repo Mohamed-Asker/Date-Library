@@ -9,7 +9,8 @@ int main()
 	clsDate Date2;
 
 
-	std::cout << clsDate::isWeekEnd(Date) << "\n";
+	std::cout << Date.CalCulateDaysToEndOfWeek() << "\n";
+	std::cout << clsDate::CalCulateDaysToEndOfWeek(Date2) << "\n";
 	
 	
 	system("pause>0");
