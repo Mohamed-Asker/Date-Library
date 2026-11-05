@@ -231,4 +231,7 @@ public:
 	static clsDate DecreaseDateByOneDecade(clsDate Date);
 	void DecreaseDateByOneDecade();
 
+	//Operation (48):
+	static clsDate DecreaseDateByXDecade(clsDate Date, int Decades);
+	void DecreaseDateByXDecade(int Decades);
 };

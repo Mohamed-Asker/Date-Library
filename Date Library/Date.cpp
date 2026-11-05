@@ -780,5 +780,17 @@ void clsDate::DecreaseDateByOneDecade()
 	*this = DecreaseDateByOneDecade(*this);
 }
 
+//Operation (48):
+clsDate clsDate::DecreaseDateByXDecade(clsDate Date, int Decades)
+{
+	Date.DecreaseYear(Decades * 10);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::DecreaseDateByXDecade(int Decades)
+{
+	*this = DecreaseDateByXDecade(*this, Decades);
+}
+
 
 
