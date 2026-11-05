@@ -5,12 +5,12 @@
 
 int main()
 {
-	clsDate Date("6/11/2026");
+	clsDate Date("1/11/2026");
 	clsDate Date2;
 
 
-	std::cout << Date.CalCulateDaysToEndOfMonth() << "\n";
-	std::cout << clsDate::CalCulateDaysToEndOfMonth(Date2) << "\n";
+	std::cout << Date.CalCulateDaysToEndOfYear() << "\n";
+	std::cout << clsDate::CalCulateDaysToEndOfYear(Date , true) << "\n";
 	
 	
 	system("pause>0");

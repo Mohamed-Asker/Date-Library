@@ -884,3 +884,23 @@ short clsDate::CalCulateDaysToEndOfMonth(bool IncludeCurrentDay)
 {
 	return CalCulateDaysToEndOfMonth(*this, IncludeCurrentDay);
 }
+
+//Operation (56):
+short clsDate::CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay)
+{
+	short DaysToEndOfYear = Date.NumberOfDaysInAYear() - Date.DaysFromBeginningOfYear();
+	return (IncludeCurrentDay) ? DaysToEndOfYear + 1 : DaysToEndOfYear;
+
+	//Another Soultion
+	/*clsDate tempDate;
+	tempDate.Day = 31;
+	tempDate.Month = 12;
+	tempDate.Year = Date.Year;
+	return DiffInDays(Date, tempDate) + ((IncludeCurrentDay) ? 1 : 0);
+	//Another Soultion
+	return DiffInDays(Date, tempDate) + ((IncludeCurrentDay) ? 1 : 0);*/
+}
+short clsDate::CalCulateDaysToEndOfYear(bool IncludeCurrentDay)
+{
+	return CalCulateDaysToEndOfYear(*this, IncludeCurrentDay);
+}

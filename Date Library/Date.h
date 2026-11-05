@@ -262,4 +262,8 @@ public:
 	//Operation (55):
 	static short CalCulateDaysToEndOfMonth(clsDate Date, bool IncludeCurrentDay = false);
 	short CalCulateDaysToEndOfMonth(bool IncludeCurrentDay = false);
+
+	//Operation (55):
+	static short CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay = false);
+	short CalCulateDaysToEndOfYear(bool IncludeCurrentDay = false);
 };
