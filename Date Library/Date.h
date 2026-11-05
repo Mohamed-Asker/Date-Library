@@ -242,4 +242,8 @@ public:
 	//Operation (50):
 	static clsDate DecreaseDateByOneMillennium(clsDate Date);
 	void DecreaseDateByOneMillennium();
+
+	//Operation (51):
+	static bool isEndOfWeek(clsDate& Date);
+	bool isEndOfWeek();
 };

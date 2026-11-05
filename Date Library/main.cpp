@@ -5,11 +5,12 @@
 
 int main()
 {
-	clsDate Date("29/2/2000");
+	clsDate Date("6/11/2026");
 	clsDate Date2;
 
-	Date.DecreaseDateByOneMillennium();
-	Date.PrintDate();
+
+	std::cout << clsDate::isEndOfWeek(Date2) << "\n";
+	
 	
 	system("pause>0");
 	return 0;

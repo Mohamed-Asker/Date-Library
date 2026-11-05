@@ -817,5 +817,13 @@ void clsDate::DecreaseDateByOneMillennium()
 	*this = DecreaseDateByOneMillennium(*this);
 }
 
-
+//Operation (51):
+bool clsDate::isEndOfWeek(clsDate& Date)
+{
+	return (Date.DayOfWeekInOrder() == 6);
+}
+bool clsDate::isEndOfWeek()
+{
+	return isEndOfWeek(*this);
+}
 
