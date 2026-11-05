@@ -17,6 +17,9 @@ protected:
 	void IncreaseDay(int Days = 1);
 	void IncreaseMonth(int Months = 1);
 	void IncreaseYear(int Years = 1);
+	void DecreaseDay(int Days = 1);
+	void DecreaseMonth(int Months = 1);
+	void DecreaseYear(int Years = 1);
 	void CheckFebMonth();
 
 public:
@@ -191,6 +194,10 @@ public:
 	//Operation (38):
 	static clsDate IncreaseDateByOneMillennium(clsDate Date);
 	void IncreaseDateByOneMillennium();
+
+	//Operation (39):
+	static clsDate DecreaseDateByOneDay(clsDate Date);
+	void DecreaseDateByOneDay();
 
 
 

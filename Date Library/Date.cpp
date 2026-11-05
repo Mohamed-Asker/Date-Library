@@ -75,6 +75,18 @@ void clsDate::IncreaseYear(int years)
 {
 	_Year += years;
 }
+void clsDate::DecreaseDay(int Days)
+{
+	_Day -= Days;
+}
+void clsDate::DecreaseMonth(int Months)
+{
+	_Month -= Months;
+}
+void clsDate::DecreaseYear(int Years)
+{
+	_Year -= Years;
+}
 void clsDate::CheckFebMonth()
 {
 	if ((this->Month == 2) && (this->Day >= 29))
@@ -627,4 +639,31 @@ void clsDate::IncreaseDateByOneMillennium()
 	*this = IncreaseDateByOneMillennium(*this);
 }
 
-
+//Operation (39):
+clsDate clsDate::DecreaseDateByOneDay(clsDate Date)
+{
+	if (Date.Day == 1)
+	{
+		if (Date.Month == 1)
+		{
+			Date.DecreaseYear();
+			Date.Month = 12;
+			Date.Day = 31;
+		}
+		else
+		{
+			Date.DecreaseMonth();
+			Date.Day = Date.NumberOfDaysInAMonth();
+		}
+	}
+	else
+	{
+		Date.DecreaseDay();
+	}
+	
+	return Date;
+}
+void clsDate::DecreaseDateByOneDay()
+{
+	*this = DecreaseDateByOneDay(*this);
+}
