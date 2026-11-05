@@ -5,10 +5,10 @@
 
 int main()
 {
-	clsDate Date("10/3/2000");
+	clsDate Date("8/3/2000");
 	clsDate Date2;
 
-	Date.DecreaseDateByXDay(5);
+	Date.DecreaseDateByXWeek(2);
 	Date.PrintDate();
 	
 

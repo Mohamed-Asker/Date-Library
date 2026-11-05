@@ -678,3 +678,32 @@ void clsDate::DecreaseDateByXDay(int Days)
 {
 	*this = DecreaseDateByXDay(*this, Days);
 }
+
+//Operation (41):
+clsDate clsDate::DecreaseDateByOneWeek(clsDate Date)
+{
+	if (Date.Day > 7)
+		Date.DecreaseDay(7);
+	else
+	{
+		for (short i = 1; i <= 7; i++)
+			Date.DecreaseDateByOneDay();
+	}
+	return Date;
+}
+void clsDate::DecreaseDateByOneWeek()
+{
+	*this = DecreaseDateByOneWeek(*this);
+}
+
+//Operation (42):
+clsDate clsDate::DecreaseDateByXWeek(clsDate Date, int Weeks)
+{
+	for (int i = 1; i <= Weeks; i++)
+		Date.DecreaseDateByOneWeek();
+	return Date;
+}
+void clsDate::DecreaseDateByXWeek(int Weeks)
+{
+	*this = DecreaseDateByXWeek(*this, Weeks);
+}
