@@ -850,13 +850,13 @@ bool clsDate::isWeekEnd()
 }
 
 //Operation (53):
-bool clsDate::isWordDay(clsDate& Date)
+bool clsDate::isWorkDay(clsDate& Date)
 {
 	return !isWeekEnd(Date);
 }
-bool clsDate::isWordDay()
+bool clsDate::isWorkDay()
 {
-	return isWordDay(*this);
+	return isWorkDay(*this);
 }
 
 //Operation (53):
@@ -903,4 +903,43 @@ short clsDate::CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay)
 short clsDate::CalCulateDaysToEndOfYear(bool IncludeCurrentDay)
 {
 	return CalCulateDaysToEndOfYear(*this, IncludeCurrentDay);
+}
+
+//Operation (56):
+int clsDate::CalculateWorkDays(clsDate Date1, clsDate Date2)
+{
+	int WorkDays = 0;
+	if (!isDate1BeforeDate2(Date1, Date2))
+		SwapDates(Date1, Date2);
+
+	while (isDate1BeforeDate2(Date1, Date2))
+	{
+		if (Date1.isWorkDay())
+			WorkDays++;
+		Date1.AddOneDayToDate();
+	}
+	return WorkDays;
+
+	//Another Solution
+	/*
+	if (isDate1AfterDate2(Date1, Date2))
+		SwapDates(Date1, Date2);
+
+	int TotalDays = DiffInDays(Date1, Date2);
+	int FullWeeks = TotalDays / 7;
+	int WorkDays = FullWeeks * 5; // 5 أيام شغل في الأسبوع
+
+	int RemainingDays = TotalDays % 7;
+	for (int i = 0; i < RemainingDays; i++)
+	{
+		if (Date1.isWorkDay())
+			WorkDays++;
+		Date1.AddOneDayToDate();
+	}
+	return WorkDays
+	*/
+}
+int clsDate::CalculateWorkDays(clsDate Date2)
+{
+	return CalculateWorkDays(*this, Date2);
 }

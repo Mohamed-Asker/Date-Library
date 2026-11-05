@@ -6,11 +6,10 @@
 int main()
 {
 	clsDate Date("1/11/2026");
-	clsDate Date2;
+	clsDate Date2("10/11/2026");
 
-
-	std::cout << Date.CalCulateDaysToEndOfYear() << "\n";
-	std::cout << clsDate::CalCulateDaysToEndOfYear(Date , true) << "\n";
+	std::cout << Date.CalculateWorkDays(Date2) << "\n";
+	std::cout << Date2.CalculateWorkDays(Date) << "\n";
 	
 	
 	system("pause>0");

@@ -252,8 +252,8 @@ public:
 	bool isWeekEnd();
 
 	//Operation (53):
-	static bool isWordDay(clsDate& Date);
-	bool isWordDay();
+	static bool isWorkDay(clsDate& Date);
+	bool isWorkDay();
 
 	//Operation (54):
 	static short CalCulateDaysToEndOfWeek(clsDate& Date);
@@ -263,7 +263,12 @@ public:
 	static short CalCulateDaysToEndOfMonth(clsDate Date, bool IncludeCurrentDay = false);
 	short CalCulateDaysToEndOfMonth(bool IncludeCurrentDay = false);
 
-	//Operation (55):
+	//Operation (56):
 	static short CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay = false);
 	short CalCulateDaysToEndOfYear(bool IncludeCurrentDay = false);
+
+	//Operation (56):
+	static int CalculateWorkDays(clsDate Date1, clsDate Date2);
+	int CalculateWorkDays(clsDate Date2);
+
 };
