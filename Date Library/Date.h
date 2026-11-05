@@ -234,4 +234,12 @@ public:
 	//Operation (48):
 	static clsDate DecreaseDateByXDecade(clsDate Date, int Decades);
 	void DecreaseDateByXDecade(int Decades);
+
+	//Operation (49):
+	static clsDate DecreaseDateByOneCentury(clsDate Date);
+	void DecreaseDateByOneCentury();
+
+	//Operation (50):
+	static clsDate DecreaseDateByOneMillennium(clsDate Date);
+	void DecreaseDateByOneMillennium();
 };

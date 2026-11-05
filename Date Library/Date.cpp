@@ -793,4 +793,29 @@ void clsDate::DecreaseDateByXDecade(int Decades)
 }
 
 
+//Operation (49):
+clsDate clsDate::DecreaseDateByOneCentury(clsDate Date)
+{
+	Date.DecreaseYear(100);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::DecreaseDateByOneCentury()
+{
+	*this = DecreaseDateByOneCentury(*this);
+}
+
+//Operation (50):
+clsDate clsDate::DecreaseDateByOneMillennium(clsDate Date)
+{
+	Date.DecreaseYear(1000);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::DecreaseDateByOneMillennium()
+{
+	*this = DecreaseDateByOneMillennium(*this);
+}
+
+
 
