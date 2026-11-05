@@ -188,6 +188,10 @@ public:
 	static clsDate IncreaseDateByOneCentury(clsDate Date);
 	void IncreaseDateByOneCentury();
 
+	//Operation (38):
+	static clsDate IncreaseDateByOneMillennium(clsDate Date);
+	void IncreaseDateByOneMillennium();
+
 
 
 

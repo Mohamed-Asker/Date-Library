@@ -615,5 +615,16 @@ void clsDate::IncreaseDateByOneCentury()
 	*this = IncreaseDateByOneCentury(*this);
 }
 
+//Operation (38):
+clsDate clsDate::IncreaseDateByOneMillennium(clsDate Date)
+{
+	Date.IncreaseYear(1000);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::IncreaseDateByOneMillennium()
+{
+	*this = IncreaseDateByOneMillennium(*this);
+}
 
 
