@@ -707,3 +707,23 @@ void clsDate::DecreaseDateByXWeek(int Weeks)
 {
 	*this = DecreaseDateByXWeek(*this, Weeks);
 }
+
+//Operation (43):
+clsDate clsDate::DecreaseDateByOneMonth(clsDate Date)
+{
+	if (Date.Month == 1)
+	{
+		Date.DecreaseMonth();
+		Date.Month = 12;
+	}
+	else
+		Date.DecreaseMonth();
+
+	short DaysInNewMonth = Date.NumberOfDaysInAMonth();
+	Date.Day = (Date.Day > DaysInNewMonth) ? DaysInNewMonth : Date.Day;
+	return Date;
+}
+void clsDate::DecreaseDateByOneMonth()
+{
+	*this = DecreaseDateByOneMonth(*this);
+}

@@ -211,5 +211,8 @@ public:
 	static clsDate DecreaseDateByXWeek(clsDate Date, int Weeks);
 	void DecreaseDateByXWeek(int Weeks);
 
+	//Operation (43):
+	static clsDate DecreaseDateByOneMonth(clsDate Date);
+	void DecreaseDateByOneMonth();
 
 };
