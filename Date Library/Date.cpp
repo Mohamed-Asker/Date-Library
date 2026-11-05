@@ -848,3 +848,13 @@ bool clsDate::isWeekEnd()
 {
 	return isWeekEnd(*this);
 }
+
+//Operation (53):
+bool clsDate::isWordDay(clsDate& Date)
+{
+	return !isWeekEnd(Date);
+}
+bool clsDate::isWordDay()
+{
+	return isWordDay(*this);
+}

@@ -250,4 +250,8 @@ public:
 	//Operation (52):
 	static bool isWeekEnd(clsDate& Date);
 	bool isWeekEnd();
+
+	//Operation (53):
+	static bool isWordDay(clsDate& Date);
+	bool isWordDay();
 };
