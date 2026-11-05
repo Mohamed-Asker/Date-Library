@@ -267,8 +267,12 @@ public:
 	static short CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay = false);
 	short CalCulateDaysToEndOfYear(bool IncludeCurrentDay = false);
 
-	//Operation (56):
+	//Operation (57):
 	static int CalculateWorkDays(clsDate Date1, clsDate Date2);
 	int CalculateWorkDays(clsDate Date2);
+
+	//Operation (58):
+	static bool isDate1AfterDate2(clsDate& Date1, clsDate& Date2);
+	bool isDateAfterDate2( clsDate& Date2);
 
 };

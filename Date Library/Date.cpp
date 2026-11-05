@@ -905,7 +905,7 @@ short clsDate::CalCulateDaysToEndOfYear(bool IncludeCurrentDay)
 	return CalCulateDaysToEndOfYear(*this, IncludeCurrentDay);
 }
 
-//Operation (56):
+//Operation (57):
 int clsDate::CalculateWorkDays(clsDate Date1, clsDate Date2)
 {
 	int WorkDays = 0;
@@ -942,4 +942,14 @@ int clsDate::CalculateWorkDays(clsDate Date1, clsDate Date2)
 int clsDate::CalculateWorkDays(clsDate Date2)
 {
 	return CalculateWorkDays(*this, Date2);
+}
+
+//Operation (58):
+bool clsDate::isDate1AfterDate2(clsDate& Date1, clsDate& Date2)
+{
+	return ((!isDate1BeforeDate2(Date1, Date2)) && (!isDate1EqualDate2(Date1, Date2)));
+}
+bool clsDate::isDateAfterDate2(clsDate& Date2)
+{
+	return isDate1AfterDate2(*this, Date2);
 }
