@@ -9,8 +9,8 @@ int main()
 	clsDate Date2;
 
 
-	std::cout << Date.CalCulateDaysToEndOfWeek() << "\n";
-	std::cout << clsDate::CalCulateDaysToEndOfWeek(Date2) << "\n";
+	std::cout << Date.CalCulateDaysToEndOfMonth() << "\n";
+	std::cout << clsDate::CalCulateDaysToEndOfMonth(Date2) << "\n";
 	
 	
 	system("pause>0");

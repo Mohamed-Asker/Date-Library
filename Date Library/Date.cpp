@@ -450,7 +450,7 @@ void clsDate::SwapDates(clsDate& Date2)
 }
 
 //Operation (25):
-int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay)
+int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeCurrentDay)
 {
 	short SwapFlagValue = 1;
 	int Days = 0;
@@ -465,11 +465,11 @@ int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay)
 		Date1.AddOneDayToDate();
 		Days++;
 	}
-	return (IncludeEndDay) ? ++Days * SwapFlagValue : Days * SwapFlagValue;
+	return (IncludeCurrentDay) ? ++Days * SwapFlagValue : Days * SwapFlagValue;
 }
-int clsDate::DiffInDays(clsDate Date2, bool IncludeEndDay)
+int clsDate::DiffInDays(clsDate Date2, bool IncludeCurrentDay)
 {
-	return DiffInDays(*this, Date2, IncludeEndDay);
+	return DiffInDays(*this, Date2, IncludeCurrentDay);
 }
 
 //Operation (26):
@@ -867,4 +867,20 @@ short clsDate::CalCulateDaysToEndOfWeek(clsDate& Date)
 short clsDate::CalCulateDaysToEndOfWeek()
 {
 	return CalCulateDaysToEndOfWeek(*this);
+}
+
+//Operation (55):
+short clsDate::CalCulateDaysToEndOfMonth(clsDate Date,	bool IncludeCurrentDay)
+{
+	return (IncludeCurrentDay) ? Date.NumberOfDaysInAMonth() - Date.Day + 1 : Date.NumberOfDaysInAMonth() - Date.Day;
+	//Another Soultions
+	/*clsDate tempDate;
+	tempDate.Year = Date.Year;
+	tempDate.Month = Date.Month;
+	tempDate.Day = Date.NumberOfDaysInAMonth();
+	return DiffInDays(Date, tempDate);*/
+}
+short clsDate::CalCulateDaysToEndOfMonth(bool IncludeCurrentDay)
+{
+	return CalCulateDaysToEndOfMonth(*this, IncludeCurrentDay);
 }

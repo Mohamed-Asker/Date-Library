@@ -141,8 +141,8 @@ public:
 	void SwapDates(clsDate& Date2);
 
 	//Operation (25):
-	static int DiffInDays(clsDate Date1, clsDate Date2, bool IncludeEndDay =true);
-	int DiffInDays(clsDate Date2, bool IncludeEndDay = true);
+	static int DiffInDays(clsDate Date1, clsDate Date2, bool IncludeCurrentDay = false);
+	int DiffInDays(clsDate Date2, bool IncludeCurrentDay = false);
 
 	//Operation (26):
 	static clsDate SystemDate();
@@ -258,4 +258,8 @@ public:
 	//Operation (54):
 	static short CalCulateDaysToEndOfWeek(clsDate& Date);
 	short CalCulateDaysToEndOfWeek();
+
+	//Operation (55):
+	static short CalCulateDaysToEndOfMonth(clsDate Date, bool IncludeCurrentDay = false);
+	short CalCulateDaysToEndOfMonth(bool IncludeCurrentDay = false);
 };
