@@ -63,17 +63,17 @@ clsDate::clsDate(short DayOrderInYear, short year)
 }
 
 //Helpers Functions
-void clsDate::IncreaseDay()
+void clsDate::IncreaseDay(int Days)
 {
-	_Day++;
+	_Day += Days;
 }
-void clsDate::IncreaseMonth()
+void clsDate::IncreaseMonth(int Months)
 {
-	_Month++;
+	_Month += Months;
 }
-void clsDate::IncreaseYear()
+void clsDate::IncreaseYear(int years)
 {
-	_Year++;
+	_Year += years;
 }
 void clsDate::CheckFebMonth()
 {
@@ -83,7 +83,6 @@ void clsDate::CheckFebMonth()
 		this->Day = (this->Day > DaysInFeb) ? DaysInFeb : Day;
 	}
 }
-
 
 //Operations:
 //Operation (1):
@@ -566,4 +565,16 @@ clsDate clsDate::IncreaseDateByOneYear(clsDate Date)
 void clsDate::IncreaseDateByOneYear()
 {
 	*this = IncreaseDateByOneYear(*this);
+}
+
+//Operation (34):
+clsDate clsDate::IncreaseDateByXYears(clsDate Date,int Years)
+{
+	Date.IncreaseYear(Years);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::IncreaseDateByXYears(int Years)
+{
+	IncreaseDateByXYears(*this, Years);
 }

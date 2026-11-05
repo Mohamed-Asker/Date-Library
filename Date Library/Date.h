@@ -14,9 +14,9 @@ protected:
 	static void PrintHeaderOfMonthCalender(short year, short month);
 
 	//Helpers Functions
-	void IncreaseDay();
-	void IncreaseMonth();
-	void IncreaseYear();
+	void IncreaseDay(int Days = 1);
+	void IncreaseMonth(int Months = 1);
+	void IncreaseYear(int Years = 1);
 	void CheckFebMonth();
 
 public:
@@ -171,5 +171,9 @@ public:
 	//Operation (33):
 	static clsDate IncreaseDateByOneYear(clsDate Date);
 	void IncreaseDateByOneYear();
+
+	//Operation (34):
+	static clsDate IncreaseDateByXYears(clsDate Date, int Years);
+	void IncreaseDateByXYears(int Years);
 
 };
