@@ -667,3 +667,14 @@ void clsDate::DecreaseDateByOneDay()
 {
 	*this = DecreaseDateByOneDay(*this);
 }
+
+//Operation (40):
+clsDate clsDate::DecreaseDateByXDay(clsDate Date, int Days)
+{
+	for (int i = 1; i <= Days; i++)	Date.DecreaseDateByOneDay();
+	return Date;
+}
+void clsDate::DecreaseDateByXDay(int Days)
+{
+	*this = DecreaseDateByXDay(*this, Days);
+}

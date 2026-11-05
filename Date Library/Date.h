@@ -199,7 +199,9 @@ public:
 	static clsDate DecreaseDateByOneDay(clsDate Date);
 	void DecreaseDateByOneDay();
 
-
+	//Operation (40):
+	static clsDate DecreaseDateByXDay(clsDate Date, int Days);
+	void DecreaseDateByXDay(int Days);
 
 
 };
