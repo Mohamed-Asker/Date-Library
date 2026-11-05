@@ -827,3 +827,24 @@ bool clsDate::isEndOfWeek()
 	return isEndOfWeek(*this);
 }
 
+//Operation (52):
+bool clsDate::isWeekEnd(clsDate& Date)
+{
+	short DayIndex = Date.DayOfWeekInOrder();
+	return  (DayIndex == 5 || DayIndex == 6);
+
+	  //Another Soultion
+	  /*switch (Date.DayOfWeekInOrder())
+	  {
+	  case 5:
+		  return true;
+	  case 6:
+		  return true;
+	  default:
+		  return false;
+	  }*/
+}
+bool clsDate::isWeekEnd()
+{
+	return isWeekEnd(*this);
+}

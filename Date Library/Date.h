@@ -246,4 +246,8 @@ public:
 	//Operation (51):
 	static bool isEndOfWeek(clsDate& Date);
 	bool isEndOfWeek();
+
+	//Operation (52):
+	static bool isWeekEnd(clsDate& Date);
+	bool isWeekEnd();
 };

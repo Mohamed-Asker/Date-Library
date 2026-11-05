@@ -9,7 +9,7 @@ int main()
 	clsDate Date2;
 
 
-	std::cout << clsDate::isEndOfWeek(Date2) << "\n";
+	std::cout << clsDate::isWeekEnd(Date) << "\n";
 	
 	
 	system("pause>0");
