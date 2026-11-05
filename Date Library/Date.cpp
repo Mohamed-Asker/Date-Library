@@ -755,3 +755,20 @@ void clsDate::DecreaseDateByOneYear()
 {
 	*this = DecreaseDateByOneYear(*this);
 }
+
+//Operation (46):
+clsDate clsDate::DecreaseDateByXYear(clsDate Date, int Years)
+{
+	Date.DecreaseYear(Years);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::DecreaseDateByXYear(int Years)
+{
+	*this = DecreaseDateByXYear(*this, Years);
+}
+
+
+
+
+

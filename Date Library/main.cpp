@@ -5,10 +5,10 @@
 
 int main()
 {
-	clsDate Date("31/3/2000");
+	clsDate Date("29/2/2000");
 	clsDate Date2;
 
-	Date.DecreaseDateByOneYear();
+	Date.DecreaseDateByXYear(4);
 	Date.PrintDate();
 	
 	
