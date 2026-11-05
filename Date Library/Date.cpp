@@ -727,3 +727,19 @@ void clsDate::DecreaseDateByOneMonth()
 {
 	*this = DecreaseDateByOneMonth(*this);
 }
+
+//Operation (44):
+clsDate clsDate::DecreaseDateByXMonth(clsDate Date, int Months)
+{
+	short DaysInTheCurrentMonth = Date.NumberOfDaysInAMonth();
+	for (int i = 1; i <= Months; i++)
+		Date.DecreaseDateByOneMonth();
+
+	short DaysInNewMonth = Date.NumberOfDaysInAMonth();
+	Date.Day = (DaysInTheCurrentMonth > DaysInNewMonth) ? DaysInNewMonth : DaysInTheCurrentMonth;
+	return Date;
+}
+void clsDate::DecreaseDateByXMonth(int Months)
+{
+	*this = DecreaseDateByXMonth(*this, Months);
+}

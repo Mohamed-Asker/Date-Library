@@ -215,4 +215,7 @@ public:
 	static clsDate DecreaseDateByOneMonth(clsDate Date);
 	void DecreaseDateByOneMonth();
 
+	//Operation (44):
+	static clsDate DecreaseDateByXMonth(clsDate Date, int Months);
+	void DecreaseDateByXMonth(int Months);
 };
