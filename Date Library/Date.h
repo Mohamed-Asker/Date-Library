@@ -184,4 +184,11 @@ public:
 	static clsDate IncreaseDateByXDecade(clsDate Date, int Decade);
 	void IncreaseDateByXDecade(int Decade);
 
+	//Operation (37):
+	static clsDate IncreaseDateByOneCentury(clsDate Date);
+	void IncreaseDateByOneCentury();
+
+
+
+
 };

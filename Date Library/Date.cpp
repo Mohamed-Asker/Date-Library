@@ -602,3 +602,18 @@ void clsDate::IncreaseDateByXDecade(int Decade)
 {
 	*this = IncreaseDateByXDecade(*this, Decade);
 }
+
+//Operation (37):
+clsDate clsDate::IncreaseDateByOneCentury(clsDate Date)
+{
+	Date.IncreaseYear(100);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::IncreaseDateByOneCentury()
+{
+	*this = IncreaseDateByOneCentury(*this);
+}
+
+
+
