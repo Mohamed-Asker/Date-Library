@@ -8,7 +8,7 @@ int main()
 	clsDate Date("29/2/2000");
 	clsDate Date2;
 
-	Date.IncreaseDateByOneDecade();
+	Date.IncreaseDateByXDecade(10);
 	Date.PrintDate();
 	
 

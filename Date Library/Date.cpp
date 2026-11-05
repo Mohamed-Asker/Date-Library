@@ -590,3 +590,15 @@ void clsDate::IncreaseDateByOneDecade()
 {
 	*this = IncreaseDateByOneDecade(*this);
 }
+
+//Operation (36):
+clsDate clsDate::IncreaseDateByXDecade(clsDate Date, int Decade)
+{
+	Date.IncreaseYear(Decade * 10);
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::IncreaseDateByXDecade(int Decade)
+{
+	*this = IncreaseDateByXDecade(*this, Decade);
+}
