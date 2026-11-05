@@ -908,10 +908,10 @@ short clsDate::CalCulateDaysToEndOfYear(bool IncludeCurrentDay)
 //Operation (57):
 int clsDate::CalculateWorkDays(clsDate Date1, clsDate Date2)
 {
-	int WorkDays = 0;
-	if (!isDate1BeforeDate2(Date1, Date2))
+	if (isDate1AfterDate2(Date1, Date2))
 		SwapDates(Date1, Date2);
 
+	int WorkDays = 0;
 	while (isDate1BeforeDate2(Date1, Date2))
 	{
 		if (Date1.isWorkDay())
@@ -952,4 +952,28 @@ bool clsDate::isDate1AfterDate2(clsDate& Date1, clsDate& Date2)
 bool clsDate::isDateAfterDate2(clsDate& Date2)
 {
 	return isDate1AfterDate2(*this, Date2);
+}
+
+//Operation (59):
+int clsDate::CalculateVecationDays(clsDate Date1, clsDate Date2)
+{
+	return CalculateWorkDays(Date1, Date2);
+	//Another Solution.
+	/*
+	if (isDate1AfterDate2(Date1, Date2))
+		SwapDates(Date1, Date2);
+
+	int VecationDays = 0;
+	while (isDate1BeforeDate2(Date1, Date2))
+	{
+		if (Date1.isWorkDay())
+			VecationDays++;
+		Date1.AddOneDayToDate();
+	}
+	return VecationDays;
+	*/
+}
+int clsDate::CalculateVecationDays(clsDate Date2)
+{
+	return CalculateVecationDays(*this, Date2);
 }

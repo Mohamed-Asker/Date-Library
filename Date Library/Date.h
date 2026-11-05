@@ -275,4 +275,7 @@ public:
 	static bool isDate1AfterDate2(clsDate& Date1, clsDate& Date2);
 	bool isDateAfterDate2( clsDate& Date2);
 
+	//Operation (59):
+	static int CalculateVecationDays(clsDate Date1, clsDate Date2);
+	int CalculateVecationDays(clsDate Date2);
 };
