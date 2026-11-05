@@ -743,3 +743,15 @@ void clsDate::DecreaseDateByXMonth(int Months)
 {
 	*this = DecreaseDateByXMonth(*this, Months);
 }
+
+//Operation (45):
+clsDate clsDate::DecreaseDateByOneYear(clsDate Date)
+{
+	Date.DecreaseYear();
+	Date.CheckFebMonth();
+	return Date;
+}
+void clsDate::DecreaseDateByOneYear()
+{
+	*this = DecreaseDateByOneYear(*this);
+}

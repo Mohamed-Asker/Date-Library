@@ -218,4 +218,12 @@ public:
 	//Operation (44):
 	static clsDate DecreaseDateByXMonth(clsDate Date, int Months);
 	void DecreaseDateByXMonth(int Months);
+
+	//Operation (45):
+	static clsDate DecreaseDateByOneYear(clsDate Date);
+	void DecreaseDateByOneYear();
+
+
+
+
 };
