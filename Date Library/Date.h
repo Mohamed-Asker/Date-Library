@@ -227,5 +227,8 @@ public:
 	static clsDate DecreaseDateByXYear(clsDate Date, int Years);
 	void DecreaseDateByXYear(int Years);
 
+	//Operation (47):
+	static clsDate DecreaseDateByOneDecade(clsDate Date);
+	void DecreaseDateByOneDecade();
 
 };
