@@ -17,6 +17,7 @@ protected:
 	void IncreaseDay();
 	void IncreaseMonth();
 	void IncreaseYear();
+	void CheckFebMonth();
 
 public:
 	//Setters.
@@ -166,5 +167,9 @@ public:
 	//Operation (32):
 	static clsDate IncreaseDateByXMonths(clsDate Date, int Months);
 	void IncreaseDateByXMonths(int Months);
+
+	//Operation (33):
+	static clsDate IncreaseDateByOneYear(clsDate Date);
+	void IncreaseDateByOneYear();
 
 };

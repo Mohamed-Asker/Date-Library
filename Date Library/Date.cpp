@@ -75,6 +75,15 @@ void clsDate::IncreaseYear()
 {
 	_Year++;
 }
+void clsDate::CheckFebMonth()
+{
+	if ((this->Month == 2) && (this->Day >= 29))
+	{
+		short DaysInFeb = this->NumberOfDaysInAMonth();
+		this->Day = (this->Day > DaysInFeb) ? DaysInFeb : Day;
+	}
+}
+
 
 //Operations:
 //Operation (1):
@@ -544,4 +553,17 @@ clsDate clsDate::IncreaseDateByXMonths(clsDate Date, int Months)
 void clsDate::IncreaseDateByXMonths(int Months)
 {
 	*this = IncreaseDateByXMonths(*this, Months);
+}
+
+//Operation (33):
+clsDate clsDate::IncreaseDateByOneYear(clsDate Date)
+{
+	Date.IncreaseYear();
+	Date.CheckFebMonth();
+	return Date;
+
+}
+void clsDate::IncreaseDateByOneYear()
+{
+	*this = IncreaseDateByOneYear(*this);
 }
