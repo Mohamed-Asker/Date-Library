@@ -23,6 +23,14 @@ protected:
 	void CheckFebMonth();
 
 public:
+	//Enums
+	enum enCompareDate
+	{
+		Equal = 1,
+		Before = 2,
+		After = 3
+	};
+
 	//Setters.
 	void setDay(short Day);
 	void setMonth(short Month);
@@ -282,5 +290,10 @@ public:
 	//Operation (60):
 	static clsDate CalculateReturnVacationDays(clsDate Date, int VecationDays);
 	clsDate CalculateReturnVacationDays(int VecationDays);
+
+	//Operation (61):
+	static enCompareDate CompareDate(clsDate& Date1, clsDate& Date2);
+	enCompareDate CompareDate(clsDate& Date2);
+
 
 };
