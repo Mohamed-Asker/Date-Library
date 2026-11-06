@@ -100,7 +100,7 @@ void clsDate::CheckFebMonth()
 //Operation (1):
 void clsDate::PrintDate()
 {
-	std::cout << Day << "/" << Month << "/" << Year << "\n";
+	std::cout << DateToString() << "\n";
 }
 
 //Operation (2):
@@ -1023,4 +1023,32 @@ clsDate::enCompareDate clsDate::CompareDate(clsDate& Date1, clsDate& Date2)
 clsDate::enCompareDate clsDate::CompareDate(clsDate& Date2)
 {
 	return CompareDate(*this, Date2);
+}
+
+//Operation (62):
+bool clsDate::isValidDayInAMonth(clsDate& Date)
+{
+	return Date.Day <= Date.NumberOfDaysInAMonth();
+}
+bool clsDate::isValidDate(clsDate& Date)
+{
+	if (Date.Month < 1 || Date.Month > 12)
+		return false;
+	if (!isValidDayInAMonth(Date))
+		return false;
+	return true;
+}
+bool clsDate::isValidDate()
+{
+	return isValidDate(*this);
+}
+
+//Operation (63):
+std::string clsDate::DateToString(const clsDate& Date)
+{
+	return std::to_string(Date.Day) + "/" + std::to_string(Date.Month) + "/" + std::to_string(Date.Year);
+}
+std::string clsDate::DateToString()
+{
+	return DateToString(*this);
 }

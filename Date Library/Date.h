@@ -22,6 +22,9 @@ protected:
 	void DecreaseYear(int Years = 1);
 	void CheckFebMonth();
 
+	//Following To Operation (62).
+	static bool isValidDayInAMonth(clsDate& Date);
+
 public:
 	//Enums
 	enum enCompareDate
@@ -294,6 +297,15 @@ public:
 	//Operation (61):
 	static enCompareDate CompareDate(clsDate& Date1, clsDate& Date2);
 	enCompareDate CompareDate(clsDate& Date2);
+
+	//Operation (62):
+	static bool isValidDate(clsDate& Date);
+	bool isValidDate();
+
+	//Operation (63):
+	static std::string DateToString(const clsDate& Date);
+	std::string DateToString();
+
 
 
 };
