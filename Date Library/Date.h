@@ -133,8 +133,8 @@ public:
 	bool isLastMonthInAYear();
 
 	//Operation (23):
-	static clsDate AddOneDayToDate(clsDate Date);
-	void AddOneDayToDate();
+	static clsDate IncreaseDateByOneDay(clsDate Date);
+	void IncreaseDateByOneDay();
 
 	//Operation (24):
 	static void SwapDates(clsDate& Date1, clsDate& Date2);
@@ -256,16 +256,16 @@ public:
 	bool isWorkDay();
 
 	//Operation (54):
-	static short CalCulateDaysToEndOfWeek(clsDate& Date);
-	short CalCulateDaysToEndOfWeek();
+	static short CalculateDaysToEndOfWeek(clsDate& Date);
+	short CalculateDaysToEndOfWeek();
 
 	//Operation (55):
-	static short CalCulateDaysToEndOfMonth(clsDate Date, bool IncludeCurrentDay = false);
-	short CalCulateDaysToEndOfMonth(bool IncludeCurrentDay = false);
+	static short CalculateDaysToEndOfMonth(clsDate Date, bool IncludeCurrentDay = false);
+	short CalculateDaysToEndOfMonth(bool IncludeCurrentDay = false);
 
 	//Operation (56):
-	static short CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay = false);
-	short CalCulateDaysToEndOfYear(bool IncludeCurrentDay = false);
+	static short CalculateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay = false);
+	short CalculateDaysToEndOfYear(bool IncludeCurrentDay = false);
 
 	//Operation (57):
 	static int CalculateWorkDays(clsDate Date1, clsDate Date2);
@@ -276,6 +276,11 @@ public:
 	bool isDateAfterDate2( clsDate& Date2);
 
 	//Operation (59):
-	static int CalculateVecationDays(clsDate Date1, clsDate Date2);
-	int CalculateVecationDays(clsDate Date2);
+	static int CalculateVacationDays(clsDate Date1, clsDate Date2);
+	int CalculateVacationDays(clsDate Date2);
+
+	//Operation (60):
+	static clsDate CalculateReturnVacationDays(clsDate Date, int VecationDays);
+	clsDate CalculateReturnVacationDays(int VecationDays);
+
 };

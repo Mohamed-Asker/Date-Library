@@ -400,7 +400,7 @@ bool clsDate::isLastMonthInAYear()
 }
 
 //Operation (23):
-clsDate clsDate::AddOneDayToDate(clsDate Date)
+clsDate clsDate::IncreaseDateByOneDay(clsDate Date)
 {
 	if (Date.isLastDayInAMonth())
 	{
@@ -422,9 +422,9 @@ clsDate clsDate::AddOneDayToDate(clsDate Date)
 	}
 	return Date;
 }
-void clsDate::AddOneDayToDate()
+void clsDate::IncreaseDateByOneDay()
 {
-	*this = AddOneDayToDate(*this);
+	*this = IncreaseDateByOneDay(*this);
 }
 
 //Operation (24):
@@ -462,7 +462,7 @@ int clsDate::DiffInDays(clsDate Date1, clsDate Date2, bool IncludeCurrentDay)
 
 	while (isDate1BeforeDate2(Date1, Date2))
 	{
-		Date1.AddOneDayToDate();
+		Date1.IncreaseDateByOneDay();
 		Days++;
 	}
 	return (IncludeCurrentDay) ? ++Days * SwapFlagValue : Days * SwapFlagValue;
@@ -499,7 +499,7 @@ int clsDate::YourAgeInDays()
 clsDate clsDate::IncreaseDateByXDays(clsDate Date, int Days)
 {
 	for (int i = 1; i <= Days; i++)
-		Date.AddOneDayToDate();
+		Date.IncreaseDateByOneDay();
 	return Date;
 }
 void clsDate::IncreaseDateByXDays(int Days)
@@ -511,7 +511,7 @@ void clsDate::IncreaseDateByXDays(int Days)
 clsDate clsDate::IncreaseDateByOneWeek(clsDate Date)
 {
 	for (short i = 1; i <= 7; i++)
-		Date.AddOneDayToDate();
+		Date.IncreaseDateByOneDay();
 	return Date;
 }
 void clsDate::IncreaseDateByOneWeek()
@@ -860,17 +860,17 @@ bool clsDate::isWorkDay()
 }
 
 //Operation (53):
-short clsDate::CalCulateDaysToEndOfWeek(clsDate& Date)
+short clsDate::CalculateDaysToEndOfWeek(clsDate& Date)
 {
 	return (6 - Date.DayOfWeekInOrder());
 }
-short clsDate::CalCulateDaysToEndOfWeek()
+short clsDate::CalculateDaysToEndOfWeek()
 {
-	return CalCulateDaysToEndOfWeek(*this);
+	return CalculateDaysToEndOfWeek(*this);
 }
 
 //Operation (55):
-short clsDate::CalCulateDaysToEndOfMonth(clsDate Date,	bool IncludeCurrentDay)
+short clsDate::CalculateDaysToEndOfMonth(clsDate Date,	bool IncludeCurrentDay)
 {
 	return (IncludeCurrentDay) ? Date.NumberOfDaysInAMonth() - Date.Day + 1 : Date.NumberOfDaysInAMonth() - Date.Day;
 	//Another Soultions
@@ -880,13 +880,13 @@ short clsDate::CalCulateDaysToEndOfMonth(clsDate Date,	bool IncludeCurrentDay)
 	tempDate.Day = Date.NumberOfDaysInAMonth();
 	return DiffInDays(Date, tempDate);*/
 }
-short clsDate::CalCulateDaysToEndOfMonth(bool IncludeCurrentDay)
+short clsDate::CalculateDaysToEndOfMonth(bool IncludeCurrentDay)
 {
-	return CalCulateDaysToEndOfMonth(*this, IncludeCurrentDay);
+	return CalculateDaysToEndOfMonth(*this, IncludeCurrentDay);
 }
 
 //Operation (56):
-short clsDate::CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay)
+short clsDate::CalculateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay)
 {
 	short DaysToEndOfYear = Date.NumberOfDaysInAYear() - Date.DaysFromBeginningOfYear();
 	return (IncludeCurrentDay) ? DaysToEndOfYear + 1 : DaysToEndOfYear;
@@ -900,9 +900,9 @@ short clsDate::CalCulateDaysToEndOfYear(clsDate Date, bool IncludeCurrentDay)
 	//Another Soultion
 	return DiffInDays(Date, tempDate) + ((IncludeCurrentDay) ? 1 : 0);*/
 }
-short clsDate::CalCulateDaysToEndOfYear(bool IncludeCurrentDay)
+short clsDate::CalculateDaysToEndOfYear(bool IncludeCurrentDay)
 {
-	return CalCulateDaysToEndOfYear(*this, IncludeCurrentDay);
+	return CalculateDaysToEndOfYear(*this, IncludeCurrentDay);
 }
 
 //Operation (57):
@@ -916,7 +916,7 @@ int clsDate::CalculateWorkDays(clsDate Date1, clsDate Date2)
 	{
 		if (Date1.isWorkDay())
 			WorkDays++;
-		Date1.AddOneDayToDate();
+		Date1.IncreaseDateByOneDay();
 	}
 	return WorkDays;
 
@@ -955,7 +955,7 @@ bool clsDate::isDateAfterDate2(clsDate& Date2)
 }
 
 //Operation (59):
-int clsDate::CalculateVecationDays(clsDate Date1, clsDate Date2)
+int clsDate::CalculateVacationDays(clsDate Date1, clsDate Date2)
 {
 	return CalculateWorkDays(Date1, Date2);
 	//Another Solution.
@@ -973,7 +973,45 @@ int clsDate::CalculateVecationDays(clsDate Date1, clsDate Date2)
 	return VecationDays;
 	*/
 }
-int clsDate::CalculateVecationDays(clsDate Date2)
+int clsDate::CalculateVacationDays(clsDate Date2)
 {
-	return CalculateVecationDays(*this, Date2);
+	return CalculateVacationDays(*this, Date2);
 }
+
+//Operation (60):
+clsDate clsDate::CalculateReturnVacationDays(clsDate Date, int VacationDays)
+{
+
+	int counter = 0;
+	while (counter < VacationDays)
+	{
+		if (Date.isWorkDay())
+			counter++;
+		Date.IncreaseDateByOneDay();
+	}
+
+	while (Date.isWeekEnd())
+		Date.IncreaseDateByOneDay();
+	return Date;
+
+	//Another Solution:
+	/*while (Date.isWeekEnd())
+		Date.IncreaseDateByOneDay();
+
+	int WeekEndCounter = 0;
+	for (int i = 1; i <= VecationDays + WeekEndCounter; i++)
+	{
+		if (Date.isWeekEnd())
+			WeekEndCounter++;
+		Date.IncreaseDateByOneDay();
+	}
+
+	while (Date.isWeekEnd())
+		Date.IncreaseDateByOneDay();
+	return Date;*/
+}
+clsDate clsDate::CalculateReturnVacationDays(int VecationDays)
+{
+	return CalculateReturnVacationDays(*this, VecationDays);
+}
+
