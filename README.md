@@ -1,51 +1,103 @@
-# Date Library
+ 
+<div align="center">
 
-A simple C++ library for handling dates and periods, providing useful functions for date calculations, comparisons, and manipulation.
+# 📅 Date & Period Library
 
-## Overview
+**A simple C++ library for working with dates and date periods.**
 
-The library consists of two main classes:
+---
 
-- **clsDate:** Provides various operations for creating, modifying, comparing, and calculating dates.
-- **clsPeriod:** Provides operations for managing date periods and calculating overlaps between them.
+### 🏅 Badges
 
-## Features
+![C++](https://img.shields.io/badge/Language-C%2B%2B-blue?logo=c%2B%2B)
+![Visual Studio](https://img.shields.io/badge/IDE-Visual%20Studio-purple?logo=visualstudio&logoColor=white)
+![Git](https://img.shields.io/badge/Tool-Git-orange?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/Platform-GitHub-black?logo=github&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-green)
 
-### clsDate
+</div>
+
+---
+
+## 📖 About The Library
+
+Date & Period Library is a C++ library designed to make working with dates and date periods easier.
+
+It provides useful functions for date calculations, comparisons, calendar generation, and period management.
+
+## ✨ Features
+
+### 📅 clsDate
+
 - Create dates using different constructors.
+- Check leap years.
+- Calculate days, hours, minutes, and seconds.
+- Get day and month names.
+- Generate monthly and yearly calendars.
 - Increase and decrease dates.
 - Compare two dates.
-- Calculate the difference between dates.
-- Check leap years and validate dates.
-- Generate monthly and yearly calendars.
+- Calculate age in days.
 - Calculate working days and vacation days.
 - Format dates into strings.
-- Calculate age in days.
+- Validate dates.
 
-### clsPeriod
-- Create and manage date periods.
-- Calculate period length.
+### 📆 clsPeriod
+
+- Create date periods using start and end dates.
+- Print date periods.
 - Check whether two periods overlap.
+- Calculate period length.
 - Check whether a date belongs to a period.
-- Calculate overlapping days.
+- Count overlapping days between two periods.
 
-## Technologies & Tools
+## 💻 Usage Example
 
-<p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
-  <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-</p>
+```cpp
+#include <iostream>
+#include "clsDate.h"
+#include "clsPeriod.h"
 
-## Requirements
+int main()
+{
+    clsDate Date1(1, 1, 2026);
+    clsDate Date2(10, 1, 2026);
 
-- C++ Compiler (Microsoft Visual C++ recommended).
-- Visual Studio.
+    Date1.PrintDate();
 
-## Developer
+    clsPeriod Period(Date1, Date2);
+
+    Period.PrintPeriod();
+
+    return 0;
+}
+```
+
+## 🛠️ Technologies & Tools
+
+- C++
+- Visual Studio
+- Git
+- GitHub
+
+## 📂 Project Structure
+
+```text
+DateLibrary/
+│
+├── clsDate.h
+├── clsDate.cpp
+│
+├── clsPeriod.h
+├── clsPeriod.cpp
+│
+└── main.cpp
+```
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## 👨‍💻 Author
 
 **Mohamed Askar**
-
-*C++ Developer*
 
