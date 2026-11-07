@@ -9,8 +9,9 @@ int main()
 	
 	clsPeriod Period(clsDate("1/1/2022"), clsDate("5/1/2022"));
 	clsPeriod Period2(clsDate("3/1/2022"), clsDate("10/1/2022"));
+	clsDate Date("6/1/2022");
 
-	Period.PrintPeriod();
+	std::cout << Period.isDateInPeriod(Date) << "\n";
 	
 	
 	

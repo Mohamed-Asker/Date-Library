@@ -40,3 +40,13 @@ int clsPeriod::PeriodLength(bool includeCurrentDay)
 {
 	return PeriodLength(*this, includeCurrentDay);
 }
+
+//Operation(4):
+bool clsPeriod::isDateInPeriod(const clsPeriod& Period, const clsDate& Date)
+{
+	return !(clsDate::CompareDate(Period.StartDate, Date) == clsDate::After || clsDate::CompareDate(Period.EndDate, Date) == clsDate::Before);
+}
+bool clsPeriod::isDateInPeriod(const clsDate& Date)
+{
+	return isDateInPeriod(*this, Date);
+}

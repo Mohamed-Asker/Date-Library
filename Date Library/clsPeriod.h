@@ -24,4 +24,8 @@ public:
 	//Operation(3):
 	static int PeriodLength(clsPeriod Period, bool includeCurrentDay = true);
 	int PeriodLength(bool includeCurrentDay = true);
+
+	//Operation(4):
+	static bool isDateInPeriod(const clsPeriod& Period, const clsDate& Date);
+	bool isDateInPeriod(const clsDate& Date);
 };
