@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <iomanip>
-#include "Date.h"
+#include "clsDate.h"
 #include "../../String Library/String Library/clsString.h"
 
 
@@ -36,7 +36,7 @@ short clsDate::getYear() const
 	return _Year;
 }
 
-//Constructors
+//Constructors.
 clsDate::clsDate()
 {
 	*this = SystemDate();
@@ -62,7 +62,7 @@ clsDate::clsDate(short DayOrderInYear, short year)
 	this->Year = Date.Year;
 }
 
-//Helpers Functions
+//Helpers Functions.
 void clsDate::IncreaseDay(int Days)
 {
 	_Day += Days;

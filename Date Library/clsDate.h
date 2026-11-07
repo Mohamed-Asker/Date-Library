@@ -305,7 +305,4 @@ public:
 	//Operation (63):
 	static std::string DateToString(const clsDate& Date);
 	std::string DateToString();
-
-
-
 };

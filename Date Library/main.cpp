@@ -1,15 +1,14 @@
 #include <iostream>
-#include "Date.h"
+#include "clsPeriod.h"
+#include "clsDate.h"
 
 
 
 int main()
 {
-	clsDate Date("11/13/2026");
-	clsDate Date2("1/1/2026");
 	
+	clsPeriod Period;
 	
-	Date.PrintDate();
 	
 	system("pause>0");
 	return 0;
