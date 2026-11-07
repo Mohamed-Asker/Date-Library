@@ -20,3 +20,13 @@ bool clsPeriod::isOverlapWith(const clsPeriod& Period2)
 {
 	return isOverlapPeriods(*this, Period2);
 }
+
+//Operation(2):
+int clsPeriod::PeriodLength(clsPeriod Period, bool includeCurrentDay)
+{
+	return Period.StartDate.DiffInDays(Period.EndDate, includeCurrentDay);
+}
+int clsPeriod::PeriodLength(bool includeCurrentDay)
+{
+	return PeriodLength(*this, includeCurrentDay);
+}

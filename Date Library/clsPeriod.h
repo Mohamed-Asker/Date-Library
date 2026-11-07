@@ -17,4 +17,8 @@ public:
 	//Operation(1):
 	static bool isOverlapPeriods(const clsPeriod& Period1, const clsPeriod& Period2);
 	bool isOverlapWith(const clsPeriod& Period2);
+
+	//Operation(2):
+	static int PeriodLength(clsPeriod Period, bool includeCurrentDay = true);
+	int PeriodLength(bool includeCurrentDay = true);
 };
