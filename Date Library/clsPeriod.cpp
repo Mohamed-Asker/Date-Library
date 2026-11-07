@@ -50,3 +50,30 @@ bool clsPeriod::isDateInPeriod(const clsDate& Date)
 {
 	return isDateInPeriod(*this, Date);
 }
+
+//Operation(5):
+int clsPeriod::CountOverlapsDays(clsPeriod Period1, clsPeriod Period2)
+{
+	if (!isOverlapPeriods(Period1, Period2))
+		return 0;
+
+	int OverlapsDays = 0;
+	int Period1Length = Period1.PeriodLength();
+	int Period2Length = Period2.PeriodLength();
+
+	clsPeriod ShortPeriod = (Period1Length >= Period2Length) ? Period2 : Period1;
+	clsPeriod LongPeriod = (Period1Length >= Period2Length) ? Period1 : Period2;
+
+	while (ShortPeriod.StartDate.CompareDate(ShortPeriod.EndDate) != clsDate::After)
+	{
+		if (LongPeriod.isDateInPeriod(ShortPeriod.StartDate))
+			OverlapsDays++;
+
+		ShortPeriod.StartDate.IncreaseDateByOneDay();
+	}
+	return OverlapsDays;
+}
+int clsPeriod::CountOverlapsDays(clsPeriod Period2)
+{
+	return CountOverlapsDays(*this, Period2);
+}

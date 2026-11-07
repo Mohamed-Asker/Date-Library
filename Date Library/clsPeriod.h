@@ -28,4 +28,8 @@ public:
 	//Operation(4):
 	static bool isDateInPeriod(const clsPeriod& Period, const clsDate& Date);
 	bool isDateInPeriod(const clsDate& Date);
+
+	//Operation(5):
+	static int CountOverlapsDays(clsPeriod Period1, clsPeriod Period2);
+	int CountOverlapsDays(clsPeriod Period2);
 };
