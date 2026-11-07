@@ -6,12 +6,14 @@
 
 int main()
 {
-	
-	clsPeriod Period(clsDate("25/12/2021"), clsDate("3/1/2022"));
-	clsPeriod Period2(clsDate("1/1/2022"), clsDate("5/1/2022"));
 	clsDate Date("6/1/2022");
 
-	std::cout << Period.CountOverlapsDays(Period2) << "\n";
+	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
+	std::cout << Date.FormatDate("dd-mm-yyyy") << "\n";
+	std::cout << Date.FormatDate("yyyy/mm/dd") << "\n";
+	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
+	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
+	std::cout << Date.FormatDate("Day: dd, Month/mm, year/yyyy") << "\n";
 	
 	
 	

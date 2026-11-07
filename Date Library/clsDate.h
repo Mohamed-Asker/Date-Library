@@ -305,4 +305,8 @@ public:
 	//Operation (63):
 	static std::string DateToString(const clsDate& Date);
 	std::string DateToString();
+
+	//Operation (64):
+	static std::string FormatDate(const clsDate& Date, const std::string& Formatting = "dd/mm/yyyy");
+	std::string FormatDate(const std::string& Formatting = "dd/mm/yyyy");
 };

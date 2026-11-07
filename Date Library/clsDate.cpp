@@ -1052,3 +1052,17 @@ std::string clsDate::DateToString()
 {
 	return DateToString(*this);
 }
+
+//Operation (64):
+std::string clsDate::FormatDate(const clsDate& Date, const std::string& Formatting)
+{
+	std::string FormatDate = "";
+	FormatDate = clsString::ReplaceWordInString(Formatting, "dd", std::to_string(Date.Day));
+	FormatDate = clsString::ReplaceWordInString(FormatDate, "mm", std::to_string(Date.Month));
+	FormatDate = clsString::ReplaceWordInString(FormatDate, "yyyy", std::to_string(Date.Year));
+	return FormatDate;
+}
+std::string clsDate::FormatDate(const std::string& Formatting)
+{
+	return FormatDate(*this, Formatting);
+}
