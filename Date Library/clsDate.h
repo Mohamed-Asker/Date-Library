@@ -295,8 +295,8 @@ public:
 	clsDate CalculateReturnVacationDays(int VecationDays);
 
 	//Operation (61):
-	static enCompareDate CompareDate(clsDate& Date1, clsDate& Date2);
-	enCompareDate CompareDate(clsDate& Date2);
+	static enCompareDate CompareDate(const clsDate& Date1, const  clsDate& Date2);
+	enCompareDate CompareDate(const clsDate& Date2);
 
 	//Operation (62):
 	static bool isValidDate(clsDate& Date);

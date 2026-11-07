@@ -12,4 +12,9 @@ public:
 	//Constructors.
 	clsPeriod();
 	clsPeriod(const clsDate& StartDate, const clsDate& EndDate);
+
+	//Operations:
+	//Operation(1):
+	static bool isOverlapPeriods(const clsPeriod& Period1, const clsPeriod& Period2);
+	bool isOverlapWith(const clsPeriod& Period2);
 };

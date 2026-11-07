@@ -1016,11 +1016,11 @@ clsDate clsDate::CalculateReturnVacationDays(int VecationDays)
 }
 
 //Operation (61):
-clsDate::enCompareDate clsDate::CompareDate(clsDate& Date1, clsDate& Date2)
+clsDate::enCompareDate clsDate::CompareDate(const clsDate& Date1, const  clsDate& Date2)
 {
 	return isDate1BeforeDate2(Date1, Date2) ? enCompareDate::Before : isDate1EqualDate2(Date1, Date2) ? enCompareDate::Equal : enCompareDate::After;
 }
-clsDate::enCompareDate clsDate::CompareDate(clsDate& Date2)
+clsDate::enCompareDate clsDate::CompareDate(const clsDate& Date2)
 {
 	return CompareDate(*this, Date2);
 }
