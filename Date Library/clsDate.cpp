@@ -1066,6 +1066,12 @@ bool clsDate::isDateBetween(const clsDate& Date, const clsDate& DateFrom, const 
 	if ((isDate1AfterDate2(Date, DateTo) || isDate1EqualDate2(Date, DateTo)) && (isDate1BeforeDate2(Date, DateFrom) || isDate1EqualDate2(Date, DateFrom)))
 		return true;
 	return false;
+
+	//Another Solution:
+	/*
+	isDate1AfterDate2(DateFrom, DateTo) ? SwapDates(DateFrom, DateTo) : void();
+	return isDateinPeriod(Date, clsPeriod(DateFrom, DateTo));
+	*/
 }
 bool clsDate::isDateBetween(const clsDate& DateFrom, const clsDate& DateTo)
 {
