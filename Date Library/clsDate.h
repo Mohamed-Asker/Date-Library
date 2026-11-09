@@ -283,8 +283,8 @@ public:
 	int CalculateWorkDays(clsDate Date2);
 
 	//Operation (58):
-	static bool isDate1AfterDate2(clsDate& Date1, clsDate& Date2);
-	bool isDateAfterDate2( clsDate& Date2);
+	static bool isDate1AfterDate2(const clsDate& Date1, const clsDate& Date2);
+	bool isDateAfterDate2(const clsDate& Date2);
 
 	//Operation (59):
 	static int CalculateVacationDays(clsDate Date1, clsDate Date2);
@@ -309,4 +309,8 @@ public:
 	//Operation (64):
 	static std::string FormatDate(const clsDate& Date, const std::string& Formatting = "dd/mm/yyyy");
 	std::string FormatDate(const std::string& Formatting = "dd/mm/yyyy");
+
+	//Operation (65):
+	static bool isDateBetween(const clsDate& Date, const clsDate& DateFrom, const clsDate& DateTo);
+	bool isDateBetween(const clsDate& DateFrom, const clsDate& DateTo);
 };

@@ -6,16 +6,14 @@
 
 int main()
 {
-	clsDate Date("6/1/2022");
+	clsDate Date("11/1/2021");
+	clsDate Date1("1/1/2022");
+	clsDate Date2("10/1/2022");
 
-	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
-	std::cout << Date.FormatDate("dd-mm-yyyy") << "\n";
-	std::cout << Date.FormatDate("yyyy/mm/dd") << "\n";
-	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
-	std::cout << Date.FormatDate("dd/mm/yyyy") << "\n";
-	std::cout << Date.FormatDate("Day: dd, Month/mm, year/yyyy") << "\n";
+	std::cout << clsDate::isDateBetween(Date, Date1, Date2) << "\n";
 	
-	
+
+
 	
 	system("pause>0");
 	return 0;

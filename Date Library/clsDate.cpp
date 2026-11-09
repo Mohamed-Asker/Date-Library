@@ -432,17 +432,9 @@ void clsDate::SwapDates(clsDate& Date1, clsDate& Date2)
 {
 	clsDate tempDate;
 
-	tempDate.Day = Date1.Day;
-	tempDate.Month = Date1.Month;
-	tempDate.Year = Date1.Year;
-
-	Date1.Day = Date2.Day;
-	Date1.Month = Date2.Month;
-	Date1.Year = Date2.Year;
-
-	Date2.Day = tempDate.Day;
-	Date2.Month = tempDate.Month;
-	Date2.Year = tempDate.Year;
+	tempDate = Date1;
+	Date1 = Date2;
+	Date2 = tempDate;
 }
 void clsDate::SwapDates(clsDate& Date2)
 {
@@ -792,7 +784,6 @@ void clsDate::DecreaseDateByXDecade(int Decades)
 	*this = DecreaseDateByXDecade(*this, Decades);
 }
 
-
 //Operation (49):
 clsDate clsDate::DecreaseDateByOneCentury(clsDate Date)
 {
@@ -945,11 +936,11 @@ int clsDate::CalculateWorkDays(clsDate Date2)
 }
 
 //Operation (58):
-bool clsDate::isDate1AfterDate2(clsDate& Date1, clsDate& Date2)
+bool clsDate::isDate1AfterDate2(const clsDate& Date1,const clsDate& Date2)
 {
 	return ((!isDate1BeforeDate2(Date1, Date2)) && (!isDate1EqualDate2(Date1, Date2)));
 }
-bool clsDate::isDateAfterDate2(clsDate& Date2)
+bool clsDate::isDateAfterDate2(const clsDate& Date2)
 {
 	return isDate1AfterDate2(*this, Date2);
 }
@@ -1065,4 +1056,14 @@ std::string clsDate::FormatDate(const clsDate& Date, const std::string& Formatti
 std::string clsDate::FormatDate(const std::string& Formatting)
 {
 	return FormatDate(*this, Formatting);
+}
+
+//Operation (65):
+bool clsDate::isDateBetween(const clsDate& Date, const clsDate& DateFrom, const clsDate& DateTo)
+{
+	return ((isDate1AfterDate2(Date, DateFrom) || isDate1EqualDate2(Date, DateFrom)) && (isDate1BeforeDate2(Date, DateTo) || isDate1EqualDate2(Date, DateTo)));
+}
+bool clsDate::isDateBetween(const clsDate& DateFrom, const clsDate& DateTo)
+{
+	return isDateBetween(*this, DateFrom, DateTo);
 }
