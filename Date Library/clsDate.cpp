@@ -1061,7 +1061,11 @@ std::string clsDate::FormatDate(const std::string& Formatting)
 //Operation (65):
 bool clsDate::isDateBetween(const clsDate& Date, const clsDate& DateFrom, const clsDate& DateTo)
 {
-	return ((isDate1AfterDate2(Date, DateFrom) || isDate1EqualDate2(Date, DateFrom)) && (isDate1BeforeDate2(Date, DateTo) || isDate1EqualDate2(Date, DateTo)));
+	if ((isDate1AfterDate2(Date, DateFrom) || isDate1EqualDate2(Date, DateFrom)) && (isDate1BeforeDate2(Date, DateTo) || isDate1EqualDate2(Date, DateTo)))
+		return true;
+	if ((isDate1AfterDate2(Date, DateTo) || isDate1EqualDate2(Date, DateTo)) && (isDate1BeforeDate2(Date, DateFrom) || isDate1EqualDate2(Date, DateFrom)))
+		return true;
+	return false;
 }
 bool clsDate::isDateBetween(const clsDate& DateFrom, const clsDate& DateTo)
 {

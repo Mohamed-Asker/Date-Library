@@ -6,10 +6,10 @@
 
 int main()
 {
-	clsDate Date("11/1/2021");
+	clsDate Date("20/1/2022");
+	clsDate Date2("20/1/2022");
 	clsDate Date1("1/1/2022");
-	clsDate Date2("10/1/2022");
-
+	
 	std::cout << clsDate::isDateBetween(Date, Date1, Date2) << "\n";
 	
 
